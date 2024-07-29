@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwb35hfw5mve5"]
+
+[ext_resource type="PackedScene" uid="uid://di7omcif4eqoc" path="res://puzlik.tscn" id="1_cigmv"]
+[ext_resource type="Texture2D" uid="uid://dcb3nf10mkjrf" path="res://graf/sprite_puzlika — копия.png" id="2_rhsmb"]
+
+[node name="leveltest" type="Node2D"]
+
+[node name="SpritePuzlika—Копия" type="Sprite2D" parent="."]
+position = Vector2(522, 420.5)
+scale = Vector2(16.4375, 12.9688)
+texture = ExtResource("2_rhsmb")
+
+[node name="puzlik" parent="." instance=ExtResource("1_cigmv")]
+position = Vector2(383, 322)

@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://di7omcif4eqoc"]
+
+[ext_resource type="Script" path="res://puzlik.gd" id="1_m4vbw"]
+[ext_resource type="PackedScene" uid="uid://bay7m8hxv2nvv" path="res://bullet.tscn" id="2_haxxe"]
+[ext_resource type="Texture2D" uid="uid://dabqthl8vou2h" path="res://graf/sprite_puzlika.png" id="2_u16po"]
+[ext_resource type="Texture2D" uid="uid://pxtjjfqj37ls" path="res://graf/pusk.png" id="3_ngr0p"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6xp1p"]
+
+[node name="puzlik" type="CharacterBody2D"]
+script = ExtResource("1_m4vbw")
+bullet = ExtResource("2_haxxe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_6xp1p")
+
+[node name="SpritePuzlika" type="Sprite2D" parent="."]
+position = Vector2(0, -1)
+texture = ExtResource("2_u16po")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+limit_smoothed = true
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(44, 0)
+
+[node name="Pusk" type="Sprite2D" parent="RayCast2D"]
+position = Vector2(4, 0)
+texture = ExtResource("3_ngr0p")
+
+[node name="Marker2D" type="Marker2D" parent="RayCast2D"]
+position = Vector2(13, 0)
