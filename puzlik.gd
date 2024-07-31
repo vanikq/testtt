@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 @export var bullet : PackedScene
+var vray = false
 
 func _physics_process(_delta):
 
@@ -13,7 +14,8 @@ func _physics_process(_delta):
 		velocity = Vector2(0,0)
 	
 	if Input.is_action_just_pressed("shoot"):
-		shoot()
+		if vray == true :
+			shoot()
 	
 	$RayCast2D.look_at(get_global_mouse_position())
 	
@@ -23,3 +25,4 @@ func shoot():
 	var b = bullet.instantiate()
 	add_child(b)
 	b.transform = $RayCast2D.transform
+

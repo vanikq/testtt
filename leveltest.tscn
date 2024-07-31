@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bwb35hfw5mve5"]
+[gd_scene load_steps=4 format=3 uid="uid://bwb35hfw5mve5"]
 
 [ext_resource type="PackedScene" uid="uid://di7omcif4eqoc" path="res://puzlik.tscn" id="1_cigmv"]
 [ext_resource type="Texture2D" uid="uid://dcb3nf10mkjrf" path="res://graf/sprite_puzlika — копия.png" id="2_rhsmb"]
+[ext_resource type="PackedScene" uid="uid://d03jll0dqai2v" path="res://gunjos.tscn" id="3_yksyb"]
 
 [node name="leveltest" type="Node2D"]
 
@@ -12,3 +13,6 @@ texture = ExtResource("2_rhsmb")
 
 [node name="puzlik" parent="." instance=ExtResource("1_cigmv")]
 position = Vector2(383, 322)
+
+[node name="gunjos" parent="." instance=ExtResource("3_yksyb")]
+position = Vector2(468, 332)

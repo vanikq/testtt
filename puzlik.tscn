@@ -8,6 +8,7 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6xp1p"]
 
 [node name="puzlik" type="CharacterBody2D"]
+collision_layer = 2
 script = ExtResource("1_m4vbw")
 bullet = ExtResource("2_haxxe")
 
