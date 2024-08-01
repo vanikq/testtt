@@ -5,9 +5,7 @@ const SPEED = 300.0
 @export var bullet : PackedScene
 
 func _ready():
-	if Global.vray == false :
-		$RayCast2D.visible = false
-	elif Global.vray == true:
+	if Global.vray == true:
 		$RayCast2D.visible = true
 
 func _physics_process(_delta):

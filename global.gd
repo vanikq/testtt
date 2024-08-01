@@ -1,4 +1,4 @@
 extends Node
 
 var vray = false
-@onready var ray = false
+var ray = false

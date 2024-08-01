@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bwb35hfw5mve5"]
+[gd_scene load_steps=5 format=3 uid="uid://bwb35hfw5mve5"]
 
 [ext_resource type="PackedScene" uid="uid://di7omcif4eqoc" path="res://puzlik.tscn" id="1_cigmv"]
 [ext_resource type="Texture2D" uid="uid://ca1acdba5npc5" path="res://niga.png" id="1_qn4bp"]
 [ext_resource type="PackedScene" uid="uid://d03jll0dqai2v" path="res://gunjos.tscn" id="3_yksyb"]
+[ext_resource type="PackedScene" uid="uid://c3a2r24sddj6d" path="res://buckluk.tscn" id="4_x11yj"]
 
 [node name="leveltest" type="Node2D"]
 
@@ -16,3 +17,8 @@ position = Vector2(383, 322)
 
 [node name="gunjos" parent="." instance=ExtResource("3_yksyb")]
 position = Vector2(468, 332)
+
+[node name="mobiku" type="Node2D" parent="."]
+position = Vector2(425, 376)
+
+[node name="buckluk" parent="mobiku" instance=ExtResource("4_x11yj")]

@@ -51,7 +51,7 @@ shoot={
 
 2d_physics/layer_1="world"
 2d_physics/layer_2="player"
-2d_physics/layer_3="mob"
+2d_physics/layer_3="mobiku"
 2d_physics/layer_4="gun"
 
 [rendering]
