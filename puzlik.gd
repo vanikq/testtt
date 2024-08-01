@@ -5,10 +5,12 @@ const SPEED = 300.0
 @export var bullet : PackedScene
 
 func _ready():
-	$RayCast2D.visible = false
+	if Global.vray == false :
+		$RayCast2D.visible = false
+	elif Global.vray == true:
+		$RayCast2D.visible = true
 
 func _physics_process(_delta):
-
 	var direction = Input.get_vector("a", "d", "w", "s")
 	if direction:
 		velocity = direction * SPEED
@@ -17,9 +19,7 @@ func _physics_process(_delta):
 	
 	if Input.is_action_just_pressed("shoot"):
 		if Global.vray == true :
-			$RayCast2D.visible = true
 			shoot()
-			
 	
 	$RayCast2D.look_at(get_global_mouse_position())
 	
@@ -29,6 +29,5 @@ func shoot():
 	var b = bullet.instantiate()
 	add_child(b)
 	b.transform = $RayCast2D.transform
-
 
 
