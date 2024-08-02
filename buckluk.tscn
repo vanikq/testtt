@@ -5,7 +5,7 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qkn2x"]
 
-[node name="buckluk" type="CharacterBody2D"]
+[node name="buckluk" type="CharacterBody2D" groups=["hiti"]]
 collision_layer = 4
 collision_mask = 9
 script = ExtResource("1_v3rti")

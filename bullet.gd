@@ -9,5 +9,6 @@ func _physics_process(delta):
 
 
 func _on_body_entered(body):
-	if body.name == "buckluk":
+	if body.is_in_group("hiti"):
+		body.queue_free()
 		queue_free()

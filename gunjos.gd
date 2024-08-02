@@ -7,3 +7,4 @@ func _on_body_entered(body):
 		queue_free()
 		Global.vray = true
 		Global.ray = true
+		queue_free()

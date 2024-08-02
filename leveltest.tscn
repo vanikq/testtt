@@ -22,3 +22,15 @@ position = Vector2(468, 332)
 position = Vector2(425, 376)
 
 [node name="buckluk" parent="mobiku" instance=ExtResource("4_x11yj")]
+
+[node name="buckluk2" parent="mobiku" instance=ExtResource("4_x11yj")]
+position = Vector2(-60, -6)
+
+[node name="buckluk3" parent="mobiku" instance=ExtResource("4_x11yj")]
+position = Vector2(64, -14)
+
+[node name="buckluk4" parent="mobiku" instance=ExtResource("4_x11yj")]
+position = Vector2(103, -42)
+
+[node name="buckluk5" parent="mobiku" instance=ExtResource("4_x11yj")]
+position = Vector2(36, 13)
