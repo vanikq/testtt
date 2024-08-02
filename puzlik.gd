@@ -1,14 +1,9 @@
 extends CharacterBody2D
 
 
-const SPEED = 300.0
+const SPEED = 200
 @export var bullet : PackedScene
 
-func _ready():
-	if Global.vray == false:
-		$RayCast2D.visible = true
-	elif Global.vray == true:
-		$RayCast2D.visible = false
 		
 func _physics_process(_delta):
 	var direction = Input.get_vector("a", "d", "w", "s")
@@ -16,6 +11,11 @@ func _physics_process(_delta):
 		velocity = direction * SPEED
 	else:
 		velocity = Vector2(0,0)
+	
+	if Global.vray == false:
+		$RayCast2D.visible = false
+	elif Global.vray == true:
+		$RayCast2D.visible = true
 	
 	if Input.is_action_just_pressed("shoot"):
 		shoot()
