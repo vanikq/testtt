@@ -4,7 +4,7 @@ extends CharacterBody2D
 const SPEED = 200
 @export var bullet : PackedScene
 
-		
+
 func _physics_process(_delta):
 	var direction = Input.get_vector("a", "d", "w", "s")
 	if direction:
@@ -21,6 +21,9 @@ func _physics_process(_delta):
 		shoot()
 	
 	$RayCast2D.look_at(get_global_mouse_position())
+	
+	if Input.is_action_just_pressed("esc"):
+		get_tree().quit()
 	
 	move_and_slide()
 
