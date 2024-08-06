@@ -58,5 +58,9 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 100
 text = "quit"
 
+[node name="clikmus" type="AudioStreamPlayer" parent="."]
+
+[node name="muzstart" type="AudioStreamPlayer" parent="."]
+
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/CenterContainer/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/CenterContainer2/quit" to="." method="_on_quit_pressed"]

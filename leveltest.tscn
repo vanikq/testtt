@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bwb35hfw5mve5"]
+[gd_scene load_steps=8 format=3 uid="uid://bwb35hfw5mve5"]
 
 [ext_resource type="PackedScene" uid="uid://di7omcif4eqoc" path="res://puzlik.tscn" id="1_cigmv"]
 [ext_resource type="Script" path="res://leveltest.gd" id="1_e05o7"]
 [ext_resource type="Texture2D" uid="uid://ca1acdba5npc5" path="res://niga.png" id="1_qn4bp"]
 [ext_resource type="PackedScene" uid="uid://d03jll0dqai2v" path="res://gunjos.tscn" id="3_yksyb"]
+[ext_resource type="AudioStream" uid="uid://bo4fqgrw3yhgm" path="res://graf/mizuna-steps5-by-inium_effectoid (1).mp3" id="5_k88h2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2ni46"]
 texture = ExtResource("1_qn4bp")
@@ -254,10 +255,15 @@ position = Vector2(383, 322)
 [node name="gunjos" parent="." instance=ExtResource("3_yksyb")]
 position = Vector2(468, 332)
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_k88h2")
+volume_db = -10.0
+autoplay = true
+
 [node name="mobiku" type="Node2D" parent="."]
 
 [node name="spawnmobs" type="Timer" parent="mobiku"]
-wait_time = 4.0
+wait_time = 3.0
 autostart = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

@@ -1,5 +1,7 @@
 extends Control
 
+@onready var clikmus = $clikmus
+
 
 func _ready():
 	pass 
