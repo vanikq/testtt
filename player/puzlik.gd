@@ -3,7 +3,8 @@ extends CharacterBody2D
 
 @export var bullet : PackedScene
 
-
+func _ready():
+	Global.plbody = self
 
 func _physics_process(_delta):
 	var direction = Input.get_vector("a", "d", "w", "s")

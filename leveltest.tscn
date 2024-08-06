@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bwb35hfw5mve5"]
+[gd_scene load_steps=11 format=3 uid="uid://bwb35hfw5mve5"]
 
 [ext_resource type="PackedScene" uid="uid://di7omcif4eqoc" path="res://player/puzlik.tscn" id="1_cigmv"]
 [ext_resource type="Script" path="res://leveltest.gd" id="1_e05o7"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://manager.gd" id="2_brjyw"]
 [ext_resource type="PackedScene" uid="uid://d03jll0dqai2v" path="res://gunjos.tscn" id="3_yksyb"]
 [ext_resource type="PackedScene" uid="uid://bypj6kl3fi8jb" path="res://pause_menu.tscn" id="4_n1gjb"]
+[ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="5_ccwbb"]
 [ext_resource type="AudioStream" uid="uid://bo4fqgrw3yhgm" path="res://graf/mizuna-steps5-by-inium_effectoid (1).mp3" id="5_k88h2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2ni46"]
@@ -266,6 +267,7 @@ theme_override_font_sizes/font_size = 64
 
 [node name="pause menu" parent="CanvasLayer" instance=ExtResource("4_n1gjb")]
 process_mode = 2
+visible = false
 
 [node name="pause" type="Button" parent="CanvasLayer"]
 process_mode = 3
@@ -278,10 +280,15 @@ offset_bottom = 41.0
 grow_horizontal = 0
 text = "pause"
 
+[node name="Virtual Joystick" parent="CanvasLayer" instance=ExtResource("5_ccwbb")]
+offset_top = -300.0
+offset_bottom = 0.0
+
 [node name="player" type="Node2D" parent="."]
 position = Vector2(383, 322)
 
 [node name="puzlik" parent="player" instance=ExtResource("1_cigmv")]
+position = Vector2(-54, 14)
 
 [node name="gunjos" parent="." instance=ExtResource("3_yksyb")]
 position = Vector2(468, 332)
