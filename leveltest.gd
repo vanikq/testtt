@@ -1,7 +1,8 @@
 extends Node2D
 
-var book_preload = preload("res://buckluk.tscn")
+var book_preload = preload("res://mob/buckluk.tscn")
 @onready var labelsc = $CanvasLayer/Label
+@onready var label_2 = $CanvasLayer/Label2
 
 
 func _ready():
@@ -10,6 +11,7 @@ func _ready():
 func _physics_process(_delta):
 	labelsc.text = "score " + str(Global.scoremobs)
 
+	label_2.text = "hp " + str(Global.hp)
 
 
 func _on_spawnmobs_timeout():

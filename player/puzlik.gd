@@ -1,14 +1,14 @@
 extends CharacterBody2D
 
 
-const SPEED = 200
 @export var bullet : PackedScene
+
 
 
 func _physics_process(_delta):
 	var direction = Input.get_vector("a", "d", "w", "s")
 	if direction:
-		velocity = direction * SPEED
+		velocity = direction * Global.speed
 	else:
 		velocity = Vector2(0,0)
 	
@@ -24,11 +24,18 @@ func _physics_process(_delta):
 	
 	
 	move_and_slide()
+	
+	if Global.hp <= 0:
+		get_tree().change_scene_to_file("res://menu.tscn")
+		Global.vray = false
+		Global.hp = 5
+	
 
 func shoot():
 	if Global.vray == true:
 		var b = bullet.instantiate()
 		add_child(b)
 		b.transform = $RayCast2D.transform
+
 
 

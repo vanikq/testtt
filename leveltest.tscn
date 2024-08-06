@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://bwb35hfw5mve5"]
 
-[ext_resource type="PackedScene" uid="uid://di7omcif4eqoc" path="res://puzlik.tscn" id="1_cigmv"]
+[ext_resource type="PackedScene" uid="uid://di7omcif4eqoc" path="res://player/puzlik.tscn" id="1_cigmv"]
 [ext_resource type="Script" path="res://leveltest.gd" id="1_e05o7"]
 [ext_resource type="Texture2D" uid="uid://ca1acdba5npc5" path="res://niga.png" id="1_qn4bp"]
 [ext_resource type="Script" path="res://manager.gd" id="2_brjyw"]
@@ -230,6 +230,7 @@ texture = ExtResource("1_qn4bp")
 
 [sub_resource type="TileSet" id="TileSet_mtfjo"]
 physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_2ni46")
 
 [node name="leveltest" type="Node2D"]
@@ -253,6 +254,16 @@ offset_right = 57.0
 offset_bottom = 100.0
 theme_override_font_sizes/font_size = 64
 
+[node name="Label2" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.5
+offset_right = 20.5
+offset_bottom = 88.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 64
+
 [node name="pause menu" parent="CanvasLayer" instance=ExtResource("4_n1gjb")]
 process_mode = 2
 
@@ -267,8 +278,10 @@ offset_bottom = 41.0
 grow_horizontal = 0
 text = "pause"
 
-[node name="puzlik" parent="." instance=ExtResource("1_cigmv")]
+[node name="player" type="Node2D" parent="."]
 position = Vector2(383, 322)
+
+[node name="puzlik" parent="player" instance=ExtResource("1_cigmv")]
 
 [node name="gunjos" parent="." instance=ExtResource("3_yksyb")]
 position = Vector2(468, 332)
@@ -281,7 +294,7 @@ autoplay = true
 [node name="mobiku" type="Node2D" parent="."]
 
 [node name="spawnmobs" type="Timer" parent="mobiku"]
-wait_time = 3.0
+wait_time = 2.0
 autostart = true
 
 [connection signal="pressed" from="CanvasLayer/pause menu/Panel/VBoxContainer/resume" to="manager" method="_on_resume_pressed"]
