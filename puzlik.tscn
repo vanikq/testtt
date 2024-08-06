@@ -9,6 +9,7 @@
 
 [node name="puzlik" type="CharacterBody2D"]
 collision_layer = 2
+collision_mask = 0
 script = ExtResource("1_m4vbw")
 bullet = ExtResource("2_haxxe")
 
@@ -22,10 +23,10 @@ texture = ExtResource("3_4syso")
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(2, 2)
 zoom = Vector2(2.5, 2.5)
-limit_left = 190
-limit_top = 205
-limit_right = 575
-limit_bottom = 430
+limit_left = 0
+limit_top = 0
+limit_right = 1150
+limit_bottom = 648
 limit_smoothed = true
 
 [node name="RayCast2D" type="RayCast2D" parent="."]

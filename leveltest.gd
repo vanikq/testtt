@@ -20,3 +20,5 @@ func buckluk_spawn():
 	var buck = book_preload.instantiate()
 	buck.position = Vector2(randi_range(115,575),randi_range(205,463))
 	$mobiku.add_child(buck)
+
+
