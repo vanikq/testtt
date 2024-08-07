@@ -31,7 +31,7 @@ func _physics_process(_delta):
 	if Global.hp <= 0:
 		get_tree().change_scene_to_file("res://menu.tscn")
 		Global.vray = false
-		Global.hp = 5
+		Global.hp = 100
 	
 
 func shoot():
