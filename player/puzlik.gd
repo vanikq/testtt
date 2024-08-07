@@ -4,7 +4,7 @@ extends CharacterBody2D
 @export var bullet : PackedScene
 
 func _ready():
-	Global.plbody = self
+	pass
 
 func _physics_process(_delta):
 	var direction = Input.get_vector("a", "d", "w", "s")
@@ -23,6 +23,8 @@ func _physics_process(_delta):
 	
 	$RayCast2D.look_at(get_global_mouse_position())
 	
+
+	Global.plbody = self
 	
 	move_and_slide()
 	

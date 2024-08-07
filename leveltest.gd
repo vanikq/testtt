@@ -20,7 +20,16 @@ func _on_spawnmobs_timeout():
 
 func buckluk_spawn():
 	var buck = book_preload.instantiate()
-	buck.position = Vector2(randi_range(115,575),randi_range(205,463))
+	buck.position = Vector2(randi_range(1,1150),randi_range(1,655))
 	$mobiku.add_child(buck)
 
+func raid_spawn():
+	for i in range(10):
+		var buck = book_preload.instantiate()
+		buck.position = Vector2(randi_range(1, 1150), randi_range(1, 655))
+		$mobiku.add_child(buck)
 
+
+
+func _on_raidmobs_timeout():
+	raid_spawn()
