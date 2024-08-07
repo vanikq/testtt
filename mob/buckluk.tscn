@@ -77,7 +77,5 @@ scale = Vector2(0.625, 0.625)
 sprite_frames = SubResource("SpriteFrames_kolyv")
 animation = &"cade"
 autoplay = "idle"
-frame = 3
-frame_progress = 1.0
 
 [connection signal="body_entered" from="dead" to="." method="_on_dead_body_entered"]

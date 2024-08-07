@@ -5,7 +5,7 @@ var hpmob = 2
 var speedmob = 200
 var chase = false
 @onready var anim = $anim
-
+var damage = false
 
 func _ready():
 	spawn_chase()
@@ -19,8 +19,9 @@ func _physics_process(_delta):
 	move_and_slide()
 
 func _on_dead_body_entered(body):
-	if body.is_in_group("Geogebra"):
-		Global.hp -= 20
+	if damage == true:
+		if body.is_in_group("Geogebra"):
+			Global.hp -= 20
 
 func dead():
 	if hpmob <= 0:
@@ -30,4 +31,5 @@ func dead():
 func spawn_chase():
 	anim.play("cade")
 	await anim.animation_finished
+	damage = true
 	chase = true
