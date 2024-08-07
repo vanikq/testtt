@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-
 @export var bullet : PackedScene
 
 func _ready():
@@ -14,31 +13,27 @@ func _physics_process(_delta):
 		velocity = Vector2(0,0)
 	
 	if Global.vray == false:
-		$RayCast2D.visible = false
+		$RayCast2D.hide()
 	elif Global.vray == true:
-		$RayCast2D.visible = true
+		$RayCast2D.show()
 	
 	if Input.is_action_just_pressed("shoot"):
 		shoot()
 	
 	$RayCast2D.look_at(get_global_mouse_position())
-	
 
-	Global.plbody = self
 	
-	move_and_slide()
+	Global.plbody = self
 	
 	if Global.hp <= 0:
 		get_tree().change_scene_to_file("res://menu.tscn")
 		Global.vray = false
 		Global.hp = 100
 	
-
+	move_and_slide()
+	
 func shoot():
 	if Global.vray == true:
 		var b = bullet.instantiate()
 		add_child(b)
 		b.transform = $RayCast2D.transform
-
-
-
