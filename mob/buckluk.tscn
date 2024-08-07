@@ -1,12 +1,61 @@
-[gd_scene load_steps=5 format=3 uid="uid://c3a2r24sddj6d"]
+[gd_scene load_steps=12 format=3 uid="uid://c3a2r24sddj6d"]
 
 [ext_resource type="Script" path="res://mob/buckluk.gd" id="1_jnsvs"]
-[ext_resource type="Texture2D" uid="uid://ceemixd4tjl4s" path="res://icon.svg" id="2_ewc0o"]
+[ext_resource type="Texture2D" uid="uid://dsre8vf1ywk2a" path="res://graf/buttonmob.png" id="2_t5qo5"]
+[ext_resource type="Texture2D" uid="uid://ceemixd4tjl4s" path="res://graf/icon.svg" id="3_pekvk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qkn2x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bh56b"]
 size = Vector2(36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jla2u"]
+atlas = ExtResource("2_t5qo5")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yqy72"]
+atlas = ExtResource("2_t5qo5")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qd6ay"]
+atlas = ExtResource("2_t5qo5")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cy0jn"]
+atlas = ExtResource("2_t5qo5")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e6p2k"]
+atlas = ExtResource("3_pekvk")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kolyv"]
+animations = [{
+"frames": [{
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_jla2u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yqy72")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qd6ay")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cy0jn")
+}],
+"loop": false,
+"name": &"cade",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e6p2k")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
 
 [node name="buckluk" type="CharacterBody2D" groups=["hiti"]]
 collision_layer = 4
@@ -16,15 +65,19 @@ script = ExtResource("1_jnsvs")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_qkn2x")
 
-[node name="Icon" type="Sprite2D" parent="."]
-scale = Vector2(0.15625, 0.15625)
-texture = ExtResource("2_ewc0o")
-
 [node name="dead" type="Area2D" parent="."]
 collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="dead"]
 shape = SubResource("RectangleShape2D_bh56b")
+
+[node name="anim" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.625, 0.625)
+sprite_frames = SubResource("SpriteFrames_kolyv")
+animation = &"cade"
+autoplay = "idle"
+frame = 3
+frame_progress = 1.0
 
 [connection signal="body_entered" from="dead" to="." method="_on_dead_body_entered"]

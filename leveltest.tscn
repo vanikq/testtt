@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://di7omcif4eqoc" path="res://player/puzlik.tscn" id="1_cigmv"]
 [ext_resource type="Script" path="res://leveltest.gd" id="1_e05o7"]
-[ext_resource type="Texture2D" uid="uid://ca1acdba5npc5" path="res://niga.png" id="1_qn4bp"]
+[ext_resource type="Texture2D" uid="uid://ca1acdba5npc5" path="res://graf/niga.png" id="1_qn4bp"]
 [ext_resource type="Script" path="res://manager.gd" id="2_brjyw"]
 [ext_resource type="PackedScene" uid="uid://d03jll0dqai2v" path="res://gunjos.tscn" id="3_yksyb"]
 [ext_resource type="PackedScene" uid="uid://bypj6kl3fi8jb" path="res://pause_menu.tscn" id="4_n1gjb"]
