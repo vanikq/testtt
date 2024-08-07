@@ -9,7 +9,6 @@ var damage = false
 func _ready():
 	spawn_chase()
 
-
 func _physics_process(_delta):
 	var direction = (Global.plbody.position - self.position).normalized()
 	if chase == true :
@@ -17,7 +16,8 @@ func _physics_process(_delta):
 		velocity = direction * speedmob
 
 	move_and_slide()
-	add_user_signal("_on_body_entered()")
+	Global.booku = self
+
 	if hpmob <= 0 :
 		Global.scoremobs += 1
 		queue_free()
