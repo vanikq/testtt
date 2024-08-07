@@ -7,6 +7,7 @@ var book_preload = preload("res://mob/buckluk.tscn")
 
 func _ready():
 	Global.scoremobs = 0
+	Global.vray = false
 
 func _physics_process(_delta):
 	labelsc.text = "score " + str(Global.scoremobs)
