@@ -8,4 +8,3 @@ var damage = 20
 var speed = 300
 var plbody: CharacterBody2D
 var mobhp1 = 40
-var booku: CharacterBody2D

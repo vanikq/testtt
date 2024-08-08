@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://d03jll0dqai2v"]
 
-[ext_resource type="Texture2D" uid="uid://pxtjjfqj37ls" path="res://graf/pusk.png" id="1_7c1i1"]
 [ext_resource type="Script" path="res://gunjos.gd" id="1_m1jld"]
+[ext_resource type="Texture2D" uid="uid://bxvqnjjx0msdx" path="res://Sprite-0001.webp" id="2_8ehwn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_16ikf"]
 size = Vector2(18, 14)
@@ -14,7 +14,8 @@ script = ExtResource("1_m1jld")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_16ikf")
 
-[node name="Pusk" type="Sprite2D" parent="."]
-texture = ExtResource("1_7c1i1")
+[node name="Sprite-0001" type="Sprite2D" parent="."]
+position = Vector2(1, 0)
+texture = ExtResource("2_8ehwn")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

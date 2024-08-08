@@ -16,7 +16,6 @@ func _physics_process(_delta):
 		velocity = direction * speedmob
 
 	move_and_slide()
-	Global.booku = self
 
 	if hpmob <= 0 :
 		Global.scoremobs += 1
