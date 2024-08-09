@@ -1,16 +1,20 @@
 extends CharacterBody2D
 
+enum {
+	MOVE
+}
+
+var state = MOVE
 @export var bullet : PackedScene
 
 func _ready():
-	pass
+	Global.hp = 100
+	Global.plbody = self
 
 func _physics_process(_delta):
-	var direction = Input.get_vector("a", "d", "w", "s")
-	if direction:
-		velocity = direction * Global.speed
-	else:
-		velocity = Vector2(0,0)
+	match state:
+		MOVE:
+			move_state()
 	
 	if Global.vray == false:
 		$RayCast2D.hide()
@@ -21,19 +25,26 @@ func _physics_process(_delta):
 		shoot()
 	
 	$RayCast2D.look_at(get_global_mouse_position())
-
-	
-	Global.plbody = self
-	
-	if Global.hp <= 0:
-		get_tree().change_scene_to_file("res://menu.tscn")
-		Global.vray = false
-		Global.hp = 100
 	
 	move_and_slide()
+	
+	if Global.hp <= 0:
+		Global.hp = 0
+		get_tree().change_scene_to_file("res://menu.tscn")
+		Global.vray = false
+	
+	
 	
 func shoot():
 	if Global.vray == true:
 		var b = bullet.instantiate()
 		add_child(b)
 		b.transform = $RayCast2D.transform
+
+func move_state():
+	var direction = Input.get_vector("a", "d", "w", "s")
+	if direction:
+		velocity = direction * Global.speed
+	else:
+		velocity = Vector2(0,0)
+	
