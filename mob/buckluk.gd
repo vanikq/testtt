@@ -50,10 +50,16 @@ func _on_dead_body_entered(_body):
 func attack_state():
 	if damage == true:
 		Global.hp -= 20
-	call_deferred("disable()", deadzone)
+	set_deferred("disable_mode", true)
 	state = IDLE
 
 func idle_state():
 	await get_tree().create_timer(2).timeout
-	call_deferred("enable()", deadzone)
+	set_deferred("disable_mode", false)
 	state = ATTACK
+
+func enable_deadzone():
+	$dead/deadzone.set_enabled()
+
+func disable_deadzone():
+	$dead/deadzone.set_enabled(false)
