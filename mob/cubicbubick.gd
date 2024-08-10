@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+
 enum {
 	IDLE,
 	ATTACK
@@ -13,13 +14,12 @@ var state : int:
 			ATTACK:
 				attack_state()
 
-
-var hpmob = 60
-var speedmob = 250
+var hpmob = 200
+var speedmob = 100
 var chase = false
-@onready var anim = $anim
+@onready var anim = $AnimatedSprite2D
 var damage = false
-@onready var deadzone = $dead/deadzone
+@onready var attackzone = $attack/attackzone
 
 func _ready():
 	spawn_chase()
@@ -33,7 +33,7 @@ func _physics_process(_delta):
 		velocity = Vector2(0,0)
 	
 	move_and_slide()
-
+	
 	if hpmob <= 0 :
 		Global.scoremobs += 1
 		queue_free()
@@ -44,16 +44,16 @@ func spawn_chase():
 	damage = true
 	chase = true
 
-func _on_dead_body_entered(_body):
+func _on_attack_body_entered(_body):
+	state = ATTACK
+
+func idle_state():
+	await get_tree().create_timer(6).timeout
+	set_deferred("disable_mode", false)
 	state = ATTACK
 
 func attack_state():
 	if damage == true:
-		Global.hp -= 20
+		Global.hp -= 60
 	set_deferred("disable_mode", true)
 	state = IDLE
-
-func idle_state():
-	await get_tree().create_timer(1).timeout
-	set_deferred("disable_mode", false)
-	state = ATTACK

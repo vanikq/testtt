@@ -1,5 +1,6 @@
 extends Node2D
 
+var cubic_preload = preload("res://mob/cubicbubick.tscn")
 var book_preload = preload("res://mob/buckluk.tscn")
 @onready var labelsc = $CanvasLayer/Label
 @onready var label_2 = $CanvasLayer/Label2

@@ -1,0 +1,81 @@
+[gd_scene load_steps=12 format=3 uid="uid://c4prbsrlq5vlo"]
+
+[ext_resource type="Script" path="res://mob/cubicbubick.gd" id="1_3rffw"]
+[ext_resource type="Texture2D" uid="uid://dsre8vf1ywk2a" path="res://graf/buttonmob.png" id="1_dqbqs"]
+[ext_resource type="Texture2D" uid="uid://ceemixd4tjl4s" path="res://graf/icon.svg" id="2_rd1he"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mhswg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dbhcu"]
+atlas = ExtResource("1_dqbqs")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qfvvl"]
+atlas = ExtResource("1_dqbqs")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v0xe4"]
+atlas = ExtResource("1_dqbqs")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_46fdf"]
+atlas = ExtResource("1_dqbqs")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tvobu"]
+atlas = ExtResource("2_rd1he")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pvgif"]
+animations = [{
+"frames": [{
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_dbhcu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qfvvl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v0xe4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_46fdf")
+}],
+"loop": false,
+"name": &"cade",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tvobu")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n8x6j"]
+size = Vector2(32, 30)
+
+[node name="cubicbubick" type="CharacterBody2D" groups=["hiti"]]
+collision_layer = 4
+collision_mask = 13
+script = ExtResource("1_3rffw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_mhswg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.625, 0.625)
+sprite_frames = SubResource("SpriteFrames_pvgif")
+animation = &"cade"
+autoplay = "idle"
+
+[node name="attack" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 10
+
+[node name="attackzone" type="CollisionShape2D" parent="attack"]
+shape = SubResource("RectangleShape2D_n8x6j")
+
+[connection signal="body_entered" from="attack" to="." method="_on_attack_body_entered"]
