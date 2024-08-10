@@ -68,7 +68,7 @@ shape = SubResource("RectangleShape2D_mhswg")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.625, 0.625)
 sprite_frames = SubResource("SpriteFrames_pvgif")
-animation = &"cade"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="attack" type="Area2D" parent="."]

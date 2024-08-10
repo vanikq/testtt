@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://bullet.gd" id="1_yi8ny"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_54w1k"]
-radius = 8.0
+radius = 5.0
 
 [node name="bullet" type="Area2D" groups=["bullet"]]
 collision_layer = 8
@@ -15,6 +15,7 @@ script = ExtResource("1_yi8ny")
 shape = SubResource("CircleShape2D_54w1k")
 
 [node name="Pulea" type="Sprite2D" parent="."]
+scale = Vector2(0.625, 0.625)
 texture = ExtResource("1_rrbss")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

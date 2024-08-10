@@ -6,6 +6,7 @@ enum {
 
 var state = MOVE
 @export var bullet : PackedScene
+var player_pos
 
 func _ready():
 	Global.hp = 100
@@ -33,7 +34,8 @@ func _physics_process(_delta):
 		get_tree().change_scene_to_file("res://menu.tscn")
 		Global.vray = false
 	
-	
+	player_pos = self.position
+	Functions.emit_signal("player_positon_upd", player_pos)
 	
 func shoot():
 	if Global.vray == true:

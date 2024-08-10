@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 enum {
 	IDLE,
-	ATTACK
+	ATTACK,
 }
 var state : int:
 	set(value):
@@ -13,30 +13,39 @@ var state : int:
 			ATTACK:
 				attack_state()
 
-
-var hpmob = 60
-var speedmob = 250
+var can_atack = true
+var hpmob = 20
+var speedmob = 200
 var chase = false
 @onready var anim = $anim
 var damage = false
 @onready var deadzone = $dead/deadzone
-
+var player
 func _ready():
 	spawn_chase()
-
-func _physics_process(_delta):
-	var direction = (Global.plbody.position - self.position).normalized()
-	if chase == true :
-		anim.play("idle")
-		velocity = direction * speedmob
-	else :
-		velocity = Vector2(0,0)
+	Functions.connect("player_positon_upd", Callable(self, "_on_player_position_upd"))
 	
+func _physics_process(_delta):
+	var direction = (player - self.position).normalized()
+	if chase == true :
+		anim.play("chase")
+		velocity = direction * speedmob
+		if direction.x < 0 :
+			anim.flip_h = false
+		else :
+			anim.flip_h = true
+	else:
+		velocity = Vector2(0,0)
+		
 	move_and_slide()
+
 
 	if hpmob <= 0 :
 		Global.scoremobs += 1
 		queue_free()
+
+func _on_player_position_upd(player_pos):
+	player = player_pos
 
 func spawn_chase():
 	anim.play("cade")
@@ -45,15 +54,18 @@ func spawn_chase():
 	chase = true
 
 func _on_dead_body_entered(_body):
-	state = ATTACK
+	if can_atack :
+		state = ATTACK
 
 func attack_state():
 	if damage == true:
-		Global.hp -= 20
+		Global.hp -= 5
+	can_atack = false
+	await get_tree().create_timer(0.1).timeout
 	set_deferred("disable_mode", true)
+	can_atack = true
 	state = IDLE
 
 func idle_state():
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(0.1).timeout
 	set_deferred("disable_mode", false)
-	state = ATTACK

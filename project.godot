@@ -17,8 +17,8 @@ config/icon="res://graf/icon.svg"
 
 [autoload]
 
-Global="*res://global.gd"
-Functions="*res://functions.gd"
+Global="*res://globals/global.gd"
+Functions="*res://globals/functions.gd"
 
 [display]
 

@@ -1,13 +1,15 @@
-[gd_scene load_steps=12 format=3 uid="uid://c3a2r24sddj6d"]
+[gd_scene load_steps=16 format=3 uid="uid://c3a2r24sddj6d"]
 
 [ext_resource type="Script" path="res://mob/buckluk.gd" id="1_jnsvs"]
 [ext_resource type="Texture2D" uid="uid://dsre8vf1ywk2a" path="res://graf/buttonmob.png" id="2_t5qo5"]
-[ext_resource type="Texture2D" uid="uid://ceemixd4tjl4s" path="res://graf/icon.svg" id="3_pekvk"]
+[ext_resource type="Texture2D" uid="uid://cjnxvqnkg50yi" path="res://graf/animation-sheet.png" id="3_gkcxj"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p7hoy"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6p1dy"]
+radius = 8.0
+height = 28.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bh56b"]
-size = Vector2(26, 26)
+size = Vector2(28, 34)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jla2u"]
 atlas = ExtResource("2_t5qo5")
@@ -25,9 +27,25 @@ region = Rect2(64, 0, 32, 32)
 atlas = ExtResource("2_t5qo5")
 region = Rect2(96, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_s71ji"]
-atlas = ExtResource("3_pekvk")
-region = Rect2(32, 64, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ux3o"]
+atlas = ExtResource("3_gkcxj")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xgtvp"]
+atlas = ExtResource("3_gkcxj")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i7c8k"]
+atlas = ExtResource("3_gkcxj")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_argt3"]
+atlas = ExtResource("3_gkcxj")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hbqfw"]
+atlas = ExtResource("3_gkcxj")
+region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kolyv"]
 animations = [{
@@ -50,11 +68,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_s71ji")
+"texture": SubResource("AtlasTexture_8ux3o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xgtvp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i7c8k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_argt3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hbqfw")
 }],
 "loop": true,
-"name": &"idle",
-"speed": 5.0
+"name": &"chase",
+"speed": 10.0
 }]
 
 [node name="buckluk" type="CharacterBody2D" groups=["hiti"]]
@@ -63,7 +93,7 @@ collision_mask = 13
 script = ExtResource("1_jnsvs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_p7hoy")
+shape = SubResource("CapsuleShape2D_6p1dy")
 
 [node name="dead" type="Area2D" parent="."]
 collision_layer = 4
@@ -73,9 +103,11 @@ collision_mask = 10
 shape = SubResource("RectangleShape2D_bh56b")
 
 [node name="anim" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.625, 0.625)
+position = Vector2(-1, 0)
+scale = Vector2(0.75, 0.8125)
 sprite_frames = SubResource("SpriteFrames_kolyv")
-animation = &"idle"
-autoplay = "idle"
+animation = &"chase"
+autoplay = "chase"
+frame_progress = 0.0608647
 
 [connection signal="body_entered" from="dead" to="." method="_on_dead_body_entered"]
