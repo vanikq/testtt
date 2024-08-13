@@ -1,28 +1,33 @@
 extends CharacterBody2D
 
 enum {
+	SPAWN,
+	CHASE,
 	IDLE,
-	ATTACK,
+	ATTACK
 }
 var state : int:
 	set(value):
 		state = value
 		match state:
+			SPAWN:
+				spawn_state()
+			CHASE:
+				pass
 			IDLE:
 				idle_state()
 			ATTACK:
 				attack_state()
 
-var can_atack = true
 var hpmob = 20
 var speedmob = 200
 var chase = false
 @onready var anim = $anim
 var damage = false
-@onready var deadzone = $dead/deadzone
+@onready var deadzone = $deadnode/dead/deadzone
 var player
 func _ready():
-	spawn_chase()
+	state = SPAWN
 	Functions.connect("player_positon_upd", Callable(self, "_on_player_position_upd"))
 	
 func _physics_process(_delta):
@@ -39,7 +44,6 @@ func _physics_process(_delta):
 		
 	move_and_slide()
 
-
 	if hpmob <= 0 :
 		Global.scoremobs += 1
 		queue_free()
@@ -47,25 +51,23 @@ func _physics_process(_delta):
 func _on_player_position_upd(player_pos):
 	player = player_pos
 
-func spawn_chase():
+func _on_dead_body_entered(body):
+	if body.is_in_group("Geogebra"):
+		state = ATTACK
+		
+func spawn_state():
 	anim.play("cade")
 	await anim.animation_finished
 	damage = true
 	chase = true
-
-func _on_dead_body_entered(_body):
-	if can_atack :
-		state = ATTACK
+	state = IDLE
 
 func attack_state():
 	if damage == true:
 		Global.hp -= 5
-	can_atack = false
-	await get_tree().create_timer(0.1).timeout
-	set_deferred("disable_mode", true)
-	can_atack = true
+	deadzone.call_deferred("set_disabled", true)
 	state = IDLE
 
 func idle_state():
 	await get_tree().create_timer(0.1).timeout
-	set_deferred("disable_mode", false)
+	deadzone.disabled = false

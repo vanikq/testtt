@@ -95,11 +95,13 @@ script = ExtResource("1_jnsvs")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_6p1dy")
 
-[node name="dead" type="Area2D" parent="."]
+[node name="deadnode" type="Node2D" parent="."]
+
+[node name="dead" type="Area2D" parent="deadnode"]
 collision_layer = 4
 collision_mask = 10
 
-[node name="deadzone" type="CollisionShape2D" parent="dead"]
+[node name="deadzone" type="CollisionShape2D" parent="deadnode/dead"]
 shape = SubResource("RectangleShape2D_fdcrw")
 
 [node name="anim" type="AnimatedSprite2D" parent="."]
@@ -110,4 +112,4 @@ animation = &"chase"
 autoplay = "chase"
 frame_progress = 0.0608647
 
-[connection signal="body_entered" from="dead" to="." method="_on_dead_body_entered"]
+[connection signal="body_entered" from="deadnode/dead" to="." method="_on_dead_body_entered"]

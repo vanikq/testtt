@@ -28,4 +28,4 @@ func raid_spawn():
 		$mobiku.add_child(buck)
 
 func _on_raidmobs_timeout():
-	raid_spawn()
+	pass

@@ -297,6 +297,7 @@ autoplay = true
 
 [node name="spawnmobs" type="Timer" parent="mobiku"]
 wait_time = 3.0
+one_shot = true
 autostart = true
 
 [node name="raidmobs" type="Timer" parent="mobiku"]
