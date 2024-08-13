@@ -20,7 +20,7 @@ var state : int:
 				attack_state()
 
 var hpmob = 20
-var speedmob = 200
+var speedmob = 350
 var chase = false
 @onready var anim = $anim
 var damage = false

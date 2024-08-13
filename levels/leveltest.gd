@@ -1,7 +1,10 @@
 extends Node2D
-
-var cubic_preload = preload("res://mob/cubicbubick.tscn")
-var book_preload = preload("res://mob/buckluk.tscn")
+var enemy_list = [
+	preload("res://mob/cubicbubick.tscn"),
+	preload("res://mob/buckluk.tscn")
+]
+var selected_enemy
+var enemy_chance = [0.4, 0.6]
 @onready var labelsc = $CanvasLayer/Label
 @onready var label_2 = $CanvasLayer/Label2
 
@@ -14,18 +17,27 @@ func _physics_process(_delta):
 	label_2.text = "hp " + str(Global.hp)
 
 func _on_spawnmobs_timeout():
-	buckluk_spawn()
+	moba_spawn()
 
-func buckluk_spawn():
-	var buck = book_preload.instantiate()
-	buck.position = Vector2(randi_range(1,1150),randi_range(1,655))
-	$mobiku.add_child(buck)
-
+func moba_spawn():
+	#var buck = book_preload.instantiate()
+	#buck.position = Vector2(randi_range(1,1150),randi_range(1,655))
+	#$mobiku.add_child(buck)
+	var random_value = randf()
+	var accumulated_probability = 0.0
+	for i in range(enemy_list.size()):
+		accumulated_probability += enemy_chance[i]
+		if random_value < accumulated_probability:
+			selected_enemy = enemy_list[i]
+			break
+	whu_spawn()
 func raid_spawn():
-	for i in range(10):
-		var buck = book_preload.instantiate()
-		buck.position = Vector2(randi_range(1, 1150), randi_range(1, 655))
-		$mobiku.add_child(buck)
+	_on_raidmobs_timeout()
 
 func _on_raidmobs_timeout():
-	raid_spawn()
+	for i in range(10):
+		moba_spawn()
+func whu_spawn():
+	var scene = selected_enemy.instantiate()
+	scene.position = Vector2(randi_range(1,1150),randi_range(1,655))
+	$mobiku.add_child(scene)

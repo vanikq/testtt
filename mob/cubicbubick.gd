@@ -17,7 +17,7 @@ var state : int:
 			ATTACK:
 				attack_state()
 
-var hpmob = 200
+var hpmob = 100
 var speedmob = 100
 var chase = false
 @onready var anim = $AnimatedSprite2D
