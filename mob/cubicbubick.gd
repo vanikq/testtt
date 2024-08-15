@@ -17,11 +17,10 @@ var state : int:
 			ATTACK:
 				attack_state()
 
-var hpmob = 100
-var speedmob = 100
+var hpmob = 60
+var speedmob = 150
 var chase = false
 @onready var anim = $AnimatedSprite2D
-var damage = false
 @onready var attackzone = $attack/attackzone
 var player
 
@@ -59,13 +58,12 @@ func idle_state():
 	attackzone.disabled = false
 
 func attack_state():
-	if damage == true:
-		Global.hp -= 60
+	if chase == true:
+		Global.hp -= 40
 	attackzone.call_deferred("set_disabled", true)
 	state = IDLE
 
 func spawn_state():
 	anim.play("cade")
 	await anim.animation_finished
-	damage = true
 	chase = true

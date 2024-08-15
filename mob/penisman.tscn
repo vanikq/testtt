@@ -1,0 +1,107 @@
+[gd_scene load_steps=16 format=3 uid="uid://d2q4tbh1cafaa"]
+
+[ext_resource type="Script" path="res://mob/penisman.gd" id="1_b2mwr"]
+[ext_resource type="Texture2D" uid="uid://k2yod1utdjk1" path="res://graf/pistol_man.png" id="1_eqyhx"]
+[ext_resource type="Texture2D" uid="uid://dsre8vf1ywk2a" path="res://graf/buttonmob.png" id="2_75rr4"]
+[ext_resource type="PackedScene" uid="uid://cduva8ra63xaf" path="res://mob/mobbullet.tscn" id="2_p6x6u"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4vy68"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nt4an"]
+atlas = ExtResource("1_eqyhx")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g838y"]
+atlas = ExtResource("1_eqyhx")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3o5yb"]
+atlas = ExtResource("1_eqyhx")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6j5s1"]
+atlas = ExtResource("1_eqyhx")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xgbio"]
+atlas = ExtResource("1_eqyhx")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5rl11"]
+atlas = ExtResource("2_75rr4")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jlgi7"]
+atlas = ExtResource("2_75rr4")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qasri"]
+atlas = ExtResource("2_75rr4")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4cf30"]
+atlas = ExtResource("2_75rr4")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ppwbq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nt4an")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g838y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3o5yb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6j5s1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xgbio")
+}],
+"loop": true,
+"name": &"shooting",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_5rl11")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jlgi7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qasri")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4cf30")
+}],
+"loop": false,
+"name": &"spawn",
+"speed": 5.0
+}]
+
+[node name="shootman" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 9
+script = ExtResource("1_b2mwr")
+bullet = ExtResource("2_p6x6u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_4vy68")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2, -1)
+scale = Vector2(1.25, 1.375)
+sprite_frames = SubResource("SpriteFrames_ppwbq")
+animation = &"shooting"
+frame = 2
+frame_progress = 0.219626
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

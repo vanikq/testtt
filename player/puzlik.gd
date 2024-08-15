@@ -36,7 +36,7 @@ func _physics_process(_delta):
 	
 	player_pos = self.position
 	Functions.emit_signal("player_positon_upd", player_pos)
-	
+
 func shoot():
 	if Global.vray == true:
 		var b = bullet.instantiate()
@@ -49,4 +49,4 @@ func move_state():
 		velocity = direction * Global.speed
 	else:
 		velocity = Vector2(0,0)
-	
+

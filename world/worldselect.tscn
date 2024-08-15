@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://exptqifsidl"]
+
+[ext_resource type="PackedScene" uid="uid://dr3vu4a7f2buh" path="res://world/worldicon.tscn" id="1_agc6m"]
+[ext_resource type="Script" path="res://world/worldselect.gd" id="1_janil"]
+[ext_resource type="PackedScene" uid="uid://bbwo123xylvuj" path="res://world/playericon.tscn" id="2_vu6hf"]
+
+[node name="worldselect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_janil")
+
+[node name="worldicon" parent="." instance=ExtResource("1_agc6m")]
+offset_left = 280.0
+offset_top = 456.0
+offset_right = 344.0
+offset_bottom = 520.0
+
+[node name="worldicon2" parent="." instance=ExtResource("1_agc6m")]
+offset_left = 520.0
+offset_top = 400.0
+offset_right = 584.0
+offset_bottom = 464.0
+world_index = 2
+next_level_parth = "res://levels/leveltest.tscn"
+
+[node name="worldicon3" parent="." instance=ExtResource("1_agc6m")]
+offset_left = 528.0
+offset_top = 144.0
+offset_right = 592.0
+offset_bottom = 208.0
+world_index = 3
+
+[node name="worldicon4" parent="." instance=ExtResource("1_agc6m")]
+offset_left = 784.0
+offset_top = 384.0
+offset_right = 848.0
+offset_bottom = 448.0
+world_index = 4
+
+[node name="playericon" parent="." instance=ExtResource("2_vu6hf")]
+layout_mode = 0

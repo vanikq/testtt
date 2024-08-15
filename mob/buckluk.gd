@@ -20,12 +20,12 @@ var state : int:
 				attack_state()
 
 var hpmob = 20
-var speedmob = 350
+var speedmob = 300
 var chase = false
 @onready var anim = $anim
-var damage = false
 @onready var deadzone = $deadnode/dead/deadzone
 var player
+
 func _ready():
 	state = SPAWN
 	Functions.connect("player_positon_upd", Callable(self, "_on_player_position_upd"))
@@ -58,12 +58,11 @@ func _on_dead_body_entered(body):
 func spawn_state():
 	anim.play("cade")
 	await anim.animation_finished
-	damage = true
 	chase = true
 	state = IDLE
 
 func attack_state():
-	if damage == true:
+	if chase == true:
 		Global.hp -= 5
 	deadzone.call_deferred("set_disabled", true)
 	state = IDLE

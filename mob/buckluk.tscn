@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c3a2r24sddj6d"]
+[gd_scene load_steps=15 format=3 uid="uid://c3a2r24sddj6d"]
 
 [ext_resource type="Script" path="res://mob/buckluk.gd" id="1_jnsvs"]
 [ext_resource type="Texture2D" uid="uid://dsre8vf1ywk2a" path="res://graf/buttonmob.png" id="2_t5qo5"]
@@ -9,7 +9,7 @@ radius = 8.0
 height = 28.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fdcrw"]
-size = Vector2(30, 36)
+size = Vector2(16, 28)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jla2u"]
 atlas = ExtResource("2_t5qo5")
@@ -43,10 +43,6 @@ region = Rect2(64, 0, 32, 32)
 atlas = ExtResource("3_gkcxj")
 region = Rect2(96, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hbqfw"]
-atlas = ExtResource("3_gkcxj")
-region = Rect2(128, 0, 32, 32)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_kolyv"]
 animations = [{
 "frames": [{
@@ -78,9 +74,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_argt3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hbqfw")
 }],
 "loop": true,
 "name": &"chase",
@@ -110,6 +103,6 @@ scale = Vector2(0.75, 0.8125)
 sprite_frames = SubResource("SpriteFrames_kolyv")
 animation = &"chase"
 autoplay = "chase"
-frame_progress = 0.0608647
+frame_progress = 0.200233
 
 [connection signal="body_entered" from="deadnode/dead" to="." method="_on_dead_body_entered"]
