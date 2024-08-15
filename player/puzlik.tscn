@@ -30,6 +30,7 @@ limit_smoothed = true
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 target_position = Vector2(44, 0)
+collision_mask = 5
 
 [node name="Pusk" type="Sprite2D" parent="RayCast2D"]
 position = Vector2(4, 0)

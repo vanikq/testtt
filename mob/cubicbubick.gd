@@ -17,8 +17,8 @@ var state : int:
 			ATTACK:
 				attack_state()
 
-var hpmob = 60
-var speedmob = 150
+var hpmob = 40
+var speedmob = 250
 var chase = false
 @onready var anim = $AnimatedSprite2D
 @onready var attackzone = $attack/attackzone
@@ -59,7 +59,7 @@ func idle_state():
 
 func attack_state():
 	if chase == true:
-		Global.hp -= 40
+		Global.hp -= 20
 	attackzone.call_deferred("set_disabled", true)
 	state = IDLE
 

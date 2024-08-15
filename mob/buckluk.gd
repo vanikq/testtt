@@ -2,7 +2,6 @@ extends CharacterBody2D
 
 enum {
 	SPAWN,
-	CHASE,
 	IDLE,
 	ATTACK
 }
@@ -12,8 +11,6 @@ var state : int:
 		match state:
 			SPAWN:
 				spawn_state()
-			CHASE:
-				pass
 			IDLE:
 				idle_state()
 			ATTACK:

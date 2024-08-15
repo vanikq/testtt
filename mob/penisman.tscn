@@ -1,11 +1,16 @@
-[gd_scene load_steps=16 format=3 uid="uid://d2q4tbh1cafaa"]
+[gd_scene load_steps=18 format=3 uid="uid://d2q4tbh1cafaa"]
 
 [ext_resource type="Script" path="res://mob/penisman.gd" id="1_b2mwr"]
 [ext_resource type="Texture2D" uid="uid://k2yod1utdjk1" path="res://graf/pistol_man.png" id="1_eqyhx"]
 [ext_resource type="Texture2D" uid="uid://dsre8vf1ywk2a" path="res://graf/buttonmob.png" id="2_75rr4"]
 [ext_resource type="PackedScene" uid="uid://cduva8ra63xaf" path="res://mob/mobbullet.tscn" id="2_p6x6u"]
+[ext_resource type="Texture2D" uid="uid://pxtjjfqj37ls" path="res://graf/pusk.png" id="5_110q0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4vy68"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uwhw6"]
+atlas = ExtResource("1_eqyhx")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nt4an"]
 atlas = ExtResource("1_eqyhx")
@@ -47,6 +52,14 @@ region = Rect2(96, 0, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_uwhw6")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_nt4an")
 }, {
 "duration": 1.0,
@@ -83,9 +96,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="shootman" type="CharacterBody2D"]
+[node name="shootman" type="CharacterBody2D" groups=["hiti"]]
 collision_layer = 4
-collision_mask = 9
+collision_mask = 11
 script = ExtResource("1_b2mwr")
 bullet = ExtResource("2_p6x6u")
 
@@ -93,15 +106,26 @@ bullet = ExtResource("2_p6x6u")
 shape = SubResource("CapsuleShape2D_4vy68")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(2, -1)
+position = Vector2(2, -5.96046e-08)
 scale = Vector2(1.25, 1.375)
 sprite_frames = SubResource("SpriteFrames_ppwbq")
-animation = &"shooting"
-frame = 2
-frame_progress = 0.219626
+animation = &"idle"
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 3.0
 autostart = true
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(0, -4)
+target_position = Vector2(50, 0)
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="RayCast2D"]
+position = Vector2(6, 0)
+scale = Vector2(1, 0.938)
+texture = ExtResource("5_110q0")
+
+[node name="Marker2D" type="Marker2D" parent="RayCast2D"]
+position = Vector2(15, 0)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,10 +1,11 @@
 extends Node2D
 var enemy_list = [
 	preload("res://mob/cubicbubick.tscn"),
-	preload("res://mob/buckluk.tscn")
+	preload("res://mob/buckluk.tscn"),
+	preload("res://mob/penisman.tscn")
 ]
 var selected_enemy
-var enemy_chance = [0.4, 0.6]
+var enemy_chance = [0.6, 0.1, 0.3]
 @onready var labelsc = $CanvasLayer/Label
 @onready var label_2 = $CanvasLayer/Label2
 
@@ -37,6 +38,7 @@ func raid_spawn():
 func _on_raidmobs_timeout():
 	for i in range(10):
 		moba_spawn()
+
 func whu_spawn():
 	var scene = selected_enemy.instantiate()
 	scene.position = Vector2(randi_range(1,1150),randi_range(1,655))
