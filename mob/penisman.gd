@@ -48,6 +48,7 @@ func _physics_process(_delta):
 		queue_free()
 	
 func spawn_state():
+	$RayCast2D/Sprite2D.hide()
 	anim.play("spawn")
 	await anim.animation_finished
 	chase = true
@@ -67,5 +68,6 @@ func _on_player_position_upd(player_pos):
 	player = player_pos
 	
 func idle_state():
+	$RayCast2D/Sprite2D.show()
 	chase = true
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bwb35hfw5mve5"]
+[gd_scene load_steps=11 format=3 uid="uid://bwb35hfw5mve5"]
 
 [ext_resource type="Script" path="res://levels/leveltest.gd" id="1_8g6np"]
 [ext_resource type="Script" path="res://manager.gd" id="2_ib58t"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bypj6kl3fi8jb" path="res://pause_menu.tscn" id="4_ohnot"]
 [ext_resource type="PackedScene" uid="uid://di7omcif4eqoc" path="res://player/puzlik.tscn" id="6_tjc65"]
 [ext_resource type="PackedScene" uid="uid://d03jll0dqai2v" path="res://gunjos.tscn" id="7_ms8nm"]
+[ext_resource type="PackedScene" uid="uid://d2q4tbh1cafaa" path="res://mob/penisman.tscn" id="8_77k07"]
 [ext_resource type="AudioStream" uid="uid://bo4fqgrw3yhgm" path="res://graf/mizuna-steps5-by-inium_effectoid (1).mp3" id="8_lcngt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2ni46"]
@@ -302,6 +303,9 @@ autostart = true
 [node name="raidmobs" type="Timer" parent="mobiku"]
 wait_time = 10.0
 autostart = true
+
+[node name="shootman" parent="." instance=ExtResource("8_77k07")]
+position = Vector2(417, 409)
 
 [connection signal="pressed" from="CanvasLayer/pause menu/Panel/VBoxContainer/resume" to="manager" method="_on_resume_pressed"]
 [connection signal="pressed" from="CanvasLayer/pause menu/Panel/VBoxContainer/settings" to="manager" method="_on_settings_pressed"]
