@@ -17,7 +17,7 @@ var state : int:
 				attack_state()
 
 var hpmob = 20
-var speedmob = 300
+var speedmob = 350
 var chase = false
 @onready var anim = $anim
 @onready var deadzone = $deadnode/dead/deadzone

@@ -36,7 +36,7 @@ func raid_spawn():
 	_on_raidmobs_timeout()
 
 func _on_raidmobs_timeout():
-	for i in range(10):
+	for i in range(5):
 		moba_spawn()
 
 func whu_spawn():
