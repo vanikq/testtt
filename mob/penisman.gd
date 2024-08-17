@@ -18,7 +18,7 @@ var state : int:
 				attack_state()
 
 var hpmob = 40
-var speedmob = 100
+var speedmob = 200
 var chase = false
 var player
 var damage = false
@@ -32,14 +32,15 @@ func _ready():
 func _physics_process(_delta):
 	var direction = (player - self.position).normalized()
 	if chase == true :
-		anim.play("idle")
 		velocity = direction * speedmob
-		if direction.x < 0 :
-			anim.flip_h = false
-		else :
-			anim.flip_h = true
 	else:
 		velocity = Vector2(0,0)
+	if direction.x < 0 :
+		anim.flip_h = false
+	else :
+		anim.flip_h = true
+	
+	move_and_slide()
 	
 	$RayCast2D.look_at(player)
 	
@@ -59,15 +60,18 @@ func _on_timer_timeout():
 
 func attack_state():
 	chase = false
+	anim.play("shooting")
+	await anim.animation_finished
 	var b = bullet.instantiate()
 	add_child(b)
 	b.transform = $RayCast2D.transform
 	state = IDLE
 
+
 func _on_player_position_upd(player_pos):
 	player = player_pos
 	
 func idle_state():
+	anim.play("idle")
 	$RayCast2D/Sprite2D.show()
 	chase = true
-

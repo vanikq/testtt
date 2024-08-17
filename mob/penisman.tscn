@@ -74,7 +74,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xgbio")
 }],
-"loop": true,
+"loop": false,
 "name": &"shooting",
 "speed": 5.0
 }, {
@@ -98,7 +98,7 @@ animations = [{
 
 [node name="shootman" type="CharacterBody2D" groups=["hiti"]]
 collision_layer = 4
-collision_mask = 11
+collision_mask = 13
 script = ExtResource("1_b2mwr")
 bullet = ExtResource("2_p6x6u")
 
@@ -106,13 +106,14 @@ bullet = ExtResource("2_p6x6u")
 shape = SubResource("CapsuleShape2D_4vy68")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(2, -5.96046e-08)
+position = Vector2(1.19209e-07, -7.10543e-15)
 scale = Vector2(1.25, 1.375)
 sprite_frames = SubResource("SpriteFrames_ppwbq")
 animation = &"idle"
+autoplay = "idle"
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 5.0
 autostart = true
 
 [node name="RayCast2D" type="RayCast2D" parent="."]

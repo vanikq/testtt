@@ -22,7 +22,7 @@ script = ExtResource("1_djpc6")
 layout_mode = 0
 offset_top = -24.0
 offset_right = 64.0
-text = "world 1"
+text = "world1"
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0

@@ -12,5 +12,3 @@ func _input(event):
 	if event.is_action_pressed("d") and current_world < worlds.size() - 1:
 		current_world += 1
 		$playericon.global_position = worlds[current_world].global_position
-	if event.is_action_pressed("ui_accept"):
-		pass

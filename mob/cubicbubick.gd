@@ -18,7 +18,7 @@ var state : int:
 				attack_state()
 
 var hpmob = 40
-var speedmob = 250
+var speedmob = 235
 var chase = false
 @onready var anim = $AnimatedSprite2D
 @onready var attackzone = $attack/attackzone
@@ -54,7 +54,7 @@ func _on_attack_body_entered(body):
 		state = ATTACK
 
 func idle_state():
-	await get_tree().create_timer(6).timeout
+	await get_tree().create_timer(2).timeout
 	attackzone.disabled = false
 
 func attack_state():
