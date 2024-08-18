@@ -43,3 +43,7 @@ func whu_spawn():
 	var scene = selected_enemy.instantiate()
 	scene.position = Vector2(randi_range(1,1150),randi_range(1,655))
 	$mobiku.add_child(scene)
+
+
+func _on_start_pressed():
+	pass
