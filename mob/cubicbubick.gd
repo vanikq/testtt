@@ -3,6 +3,7 @@ extends CharacterBody2D
 enum {
 	SPAWN,
 	IDLE,
+	DAMAGE,
 	ATTACK
 }
 
@@ -14,6 +15,8 @@ var state : int:
 				spawn_state()
 			IDLE:
 				idle_state()
+			DAMAGE:
+				damage_state()
 			ATTACK:
 				attack_state()
 
@@ -31,7 +34,10 @@ func _ready():
 func _physics_process(_delta):
 	var direction = (player - self.position).normalized()
 	if chase == true :
-		anim.play("idle")
+		if hpmob == 40 :
+			anim.play("case")
+		if hpmob == 20 :
+			anim.play("casedamage")
 		velocity = direction * speedmob
 		if direction.x < 0 :
 			anim.flip_h = false
@@ -42,8 +48,12 @@ func _physics_process(_delta):
 	
 	move_and_slide()
 	
+	
 	if hpmob <= 0 :
-		Global.scoremobs += 4
+		chase = false
+		anim.play("dying")
+		await anim.animation_finished
+		Global.scoremobs += 2
 		queue_free()
 
 func _on_player_position_upd(player_pos):
@@ -67,3 +77,7 @@ func spawn_state():
 	anim.play("cade")
 	await anim.animation_finished
 	chase = true
+	state = IDLE
+
+func damage_state():
+	pass

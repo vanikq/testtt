@@ -2,7 +2,7 @@ extends Node2D
 var enemy_list = [
 	preload("res://mob/cubicbubick.tscn"),
 	preload("res://mob/buckluk.tscn"),
-	preload("res://mob/penisman.tscn")
+	preload("res://mob/shootman.tscn")
 ]
 var selected_enemy
 var enemy_chance = [0.6, 0.1, 0.3]
@@ -16,6 +16,7 @@ func _ready():
 func _physics_process(_delta):
 	labelsc.text = "score " + str(Global.scoremobs)
 	label_2.text = "hp " + str(Global.hp)
+	
 
 func _on_spawnmobs_timeout():
 	moba_spawn()
