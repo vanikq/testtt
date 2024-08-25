@@ -312,9 +312,11 @@ autoplay = true
 
 [node name="spawnmobs" type="Timer" parent="mobiku"]
 wait_time = 3.0
+autostart = true
 
 [node name="raidmobs" type="Timer" parent="mobiku"]
 wait_time = 10.0
+autostart = true
 
 [connection signal="pressed" from="CanvasLayer/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="CanvasLayer/pause menu/Panel/VBoxContainer/resume" to="manager" method="_on_resume_pressed"]
