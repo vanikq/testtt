@@ -45,7 +45,7 @@ func _physics_process(_delta):
 	$RayCast2D.look_at(player)
 	
 	if hpmob <= 0 :
-		Global.scoremobs += 4
+		Global.scoremobs += 1
 		queue_free()
 	
 func spawn_state():

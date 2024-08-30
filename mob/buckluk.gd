@@ -3,6 +3,8 @@ extends CharacterBody2D
 enum {
 	SPAWN,
 	IDLE,
+	DAMAGE,
+	DYING,
 	ATTACK
 }
 var state : int:
@@ -13,6 +15,10 @@ var state : int:
 				spawn_state()
 			IDLE:
 				idle_state()
+			DAMAGE:
+				pass
+			DYING:
+				dead_state()
 			ATTACK:
 				attack_state()
 
@@ -42,8 +48,9 @@ func _physics_process(_delta):
 	move_and_slide()
 
 	if hpmob <= 0 :
-		Global.scoremobs += 1
-		queue_free()
+		hpmob = 1
+		Global.scoremobs += 2
+		state = DYING
 
 func _on_player_position_upd(player_pos):
 	player = player_pos
@@ -67,3 +74,9 @@ func attack_state():
 func idle_state():
 	await get_tree().create_timer(0.1).timeout
 	deadzone.disabled = false
+	
+func dead_state():
+	chase = false
+	anim.play("dead")
+	await anim.animation_finished
+	queue_free()

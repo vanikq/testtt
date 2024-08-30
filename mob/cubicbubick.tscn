@@ -1,10 +1,10 @@
 [gd_scene load_steps=38 format=3 uid="uid://c4prbsrlq5vlo"]
 
 [ext_resource type="Script" path="res://mob/cubicbubick.gd" id="1_3rffw"]
-[ext_resource type="Texture2D" uid="uid://dsre8vf1ywk2a" path="res://graf/buttonmob.png" id="1_dqbqs"]
-[ext_resource type="Texture2D" uid="uid://cbtnmgq8dxdor" path="res://graf/cubicbobuck-sheet.png" id="3_60js6"]
-[ext_resource type="Texture2D" uid="uid://b06twd2wanww6" path="res://graf/cubicrubicrun.png" id="3_c4r86"]
-[ext_resource type="Texture2D" uid="uid://cddscmx2v0jyw" path="res://graf/cubicbubicdead.png" id="5_ko0rb"]
+[ext_resource type="Texture2D" uid="uid://suusfhyreluy" path="res://graf/buttonmob.png" id="1_dqbqs"]
+[ext_resource type="Texture2D" uid="uid://drqr04dc7hs03" path="res://graf/cubicbobuck-sheet.png" id="3_60js6"]
+[ext_resource type="Texture2D" uid="uid://ds8ft7jlah37w" path="res://graf/cubicrubicrun.png" id="3_c4r86"]
+[ext_resource type="Texture2D" uid="uid://crt73fkorrao8" path="res://graf/cubicbubicdead.png" id="5_ko0rb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mhswg"]
 size = Vector2(32, 30)
@@ -237,7 +237,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"dying",
-"speed": 10.0
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -266,9 +266,10 @@ shape = SubResource("RectangleShape2D_n8x6j")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1, 0.9375)
 sprite_frames = SubResource("SpriteFrames_pvgif")
-animation = &"casedamage"
+animation = &"dying"
 autoplay = "idle"
-frame_progress = 0.507212
+frame = 7
+frame_progress = 1.0
 speed_scale = 0.5
 
 [connection signal="body_entered" from="attack" to="." method="_on_attack_body_entered"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c13xibtow6dmu"
-path="res://.godot/imported/sprite_puzlika.png-c8ca315c9bf7d3152feee64a63f4466a.ctex"
+uid="uid://dcq7qc3ltojf1"
+path="res://.godot/imported/15.png-f678915fa9dbde2239b58b4c6d4971c1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graf/sprite_puzlika.png"
-dest_files=["res://.godot/imported/sprite_puzlika.png-c8ca315c9bf7d3152feee64a63f4466a.ctex"]
+source_file="res://graf/Tiles/15.png"
+dest_files=["res://.godot/imported/15.png-f678915fa9dbde2239b58b4c6d4971c1.ctex"]
 
 [params]
 

@@ -7,7 +7,7 @@ var enemy_list = [
 var selected_enemy
 var enemy_chance = [0.6, 0.1, 0.3]
 @onready var labelsc = $CanvasLayer/Label
-@onready var label_2 = $CanvasLayer/Label2
+@onready var HPbar = $CanvasLayer/TextureProgressBar
 
 func _ready():
 	Global.scoremobs = 0
@@ -15,7 +15,7 @@ func _ready():
 
 func _physics_process(_delta):
 	labelsc.text = "score " + str(Global.scoremobs)
-	label_2.text = "hp " + str(Global.hp)
+	HPbar.value = Global.hp
 	
 
 func _on_spawnmobs_timeout():

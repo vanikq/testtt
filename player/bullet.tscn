@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bay7m8hxv2nvv"]
 
-[ext_resource type="Script" path="res://player/bullet.gd" id="1_ewbja"]
-[ext_resource type="Texture2D" uid="uid://ofm5k3uog0s1" path="res://graf/pulea.png" id="2_53a6y"]
+[ext_resource type="Script" path="res://player/bullet.gd" id="1_dlqm4"]
+[ext_resource type="Texture2D" uid="uid://vt4hsimm44m1" path="res://graf/pulea.png" id="2_53a6y"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_54w1k"]
 radius = 5.0
@@ -9,7 +9,7 @@ radius = 5.0
 [node name="bullet" type="Area2D" groups=["bullet"]]
 collision_layer = 8
 collision_mask = 21
-script = ExtResource("1_ewbja")
+script = ExtResource("1_dlqm4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_54w1k")

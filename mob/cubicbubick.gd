@@ -4,6 +4,7 @@ enum {
 	SPAWN,
 	IDLE,
 	DAMAGE,
+	DYING,
 	ATTACK
 }
 
@@ -17,6 +18,8 @@ var state : int:
 				idle_state()
 			DAMAGE:
 				damage_state()
+			DYING:
+				dying_state()
 			ATTACK:
 				attack_state()
 
@@ -48,13 +51,11 @@ func _physics_process(_delta):
 	
 	move_and_slide()
 	
-	
 	if hpmob <= 0 :
-		chase = false
-		anim.play("dying")
-		await anim.animation_finished
-		Global.scoremobs += 2
-		queue_free()
+		hpmob = 1
+		Global.scoremobs += 1
+		state = DYING
+
 
 func _on_player_position_upd(player_pos):
 	player = player_pos
@@ -81,3 +82,9 @@ func spawn_state():
 
 func damage_state():
 	pass
+
+func dying_state():
+	chase = false
+	anim.play("dying")
+	await anim.animation_finished
+	queue_free()

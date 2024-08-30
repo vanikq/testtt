@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://player/puzlik.gd" id="1_m4vbw"]
 [ext_resource type="PackedScene" uid="uid://bay7m8hxv2nvv" path="res://player/bullet.tscn" id="2_haxxe"]
-[ext_resource type="Texture2D" uid="uid://fwse5skg54by" path="res://graf/newpix.png" id="3_4syso"]
-[ext_resource type="Texture2D" uid="uid://pxtjjfqj37ls" path="res://graf/pusk.png" id="3_ngr0p"]
+[ext_resource type="Texture2D" uid="uid://d121u51cwag6t" path="res://graf/newpix1.png" id="3_urnyv"]
+[ext_resource type="Texture2D" uid="uid://c8yavn23g2v5r" path="res://graf/puscaPLAYER.png" id="4_u83s7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6xp1p"]
 
@@ -17,7 +17,7 @@ shape = SubResource("CapsuleShape2D_6xp1p")
 
 [node name="SpritePuzlika" type="Sprite2D" parent="."]
 position = Vector2(0, -1)
-texture = ExtResource("3_4syso")
+texture = ExtResource("3_urnyv")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(2, 2)
@@ -33,8 +33,7 @@ target_position = Vector2(44, 0)
 collision_mask = 5
 
 [node name="Pusk" type="Sprite2D" parent="RayCast2D"]
-position = Vector2(4, 0)
-texture = ExtResource("3_ngr0p")
+texture = ExtResource("4_u83s7")
 
 [node name="Marker2D" type="Marker2D" parent="RayCast2D"]
 position = Vector2(13, 0)

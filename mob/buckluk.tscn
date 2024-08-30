@@ -1,15 +1,17 @@
-[gd_scene load_steps=15 format=3 uid="uid://c3a2r24sddj6d"]
+[gd_scene load_steps=29 format=3 uid="uid://c3a2r24sddj6d"]
 
 [ext_resource type="Script" path="res://mob/buckluk.gd" id="1_jnsvs"]
-[ext_resource type="Texture2D" uid="uid://dsre8vf1ywk2a" path="res://graf/buttonmob.png" id="2_t5qo5"]
-[ext_resource type="Texture2D" uid="uid://cjnxvqnkg50yi" path="res://graf/animation-sheet.png" id="3_gkcxj"]
+[ext_resource type="Texture2D" uid="uid://suusfhyreluy" path="res://graf/buttonmob.png" id="2_t5qo5"]
+[ext_resource type="Texture2D" uid="uid://dtxhjiiroyq0l" path="res://graf/booklukfara-run.png" id="3_aak7f"]
+[ext_resource type="Texture2D" uid="uid://dok3hjgi82ipo" path="res://graf/booklukfara-shee.png" id="4_kysf3"]
+[ext_resource type="Texture2D" uid="uid://5r5tsra032m0" path="res://graf/booklukfara-dead.png" id="5_7ysgp"]
+[ext_resource type="Texture2D" uid="uid://1jyp067vj7x3" path="res://graf/booklukfara.png" id="5_y6i6d"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6p1dy"]
-radius = 8.0
-height = 28.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o5xy5"]
+size = Vector2(17, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fdcrw"]
-size = Vector2(16, 28)
+size = Vector2(22, 28)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jla2u"]
 atlas = ExtResource("2_t5qo5")
@@ -27,21 +29,65 @@ region = Rect2(64, 0, 32, 32)
 atlas = ExtResource("2_t5qo5")
 region = Rect2(96, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8ux3o"]
-atlas = ExtResource("3_gkcxj")
+[sub_resource type="AtlasTexture" id="AtlasTexture_c04bs"]
+atlas = ExtResource("3_aak7f")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xgtvp"]
-atlas = ExtResource("3_gkcxj")
+[sub_resource type="AtlasTexture" id="AtlasTexture_o2cfn"]
+atlas = ExtResource("3_aak7f")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_i7c8k"]
-atlas = ExtResource("3_gkcxj")
+[sub_resource type="AtlasTexture" id="AtlasTexture_4amn8"]
+atlas = ExtResource("3_aak7f")
 region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_argt3"]
-atlas = ExtResource("3_gkcxj")
+[sub_resource type="AtlasTexture" id="AtlasTexture_hqttn"]
+atlas = ExtResource("3_aak7f")
 region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gxouq"]
+atlas = ExtResource("3_aak7f")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pihiy"]
+atlas = ExtResource("3_aak7f")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_so3yk"]
+atlas = ExtResource("4_kysf3")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_trqfi"]
+atlas = ExtResource("5_7ysgp")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_41s7f"]
+atlas = ExtResource("5_7ysgp")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_25vn7"]
+atlas = ExtResource("5_7ysgp")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eqwyt"]
+atlas = ExtResource("5_7ysgp")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f38uv"]
+atlas = ExtResource("5_7ysgp")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bshmj"]
+atlas = ExtResource("5_7ysgp")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xf87c"]
+atlas = ExtResource("5_7ysgp")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vfabt"]
+atlas = ExtResource("5_y6i6d")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kolyv"]
 animations = [{
@@ -64,20 +110,68 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8ux3o")
+"texture": SubResource("AtlasTexture_c04bs")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xgtvp")
+"texture": SubResource("AtlasTexture_o2cfn")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_i7c8k")
+"texture": SubResource("AtlasTexture_4amn8")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_argt3")
+"texture": SubResource("AtlasTexture_hqttn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gxouq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pihiy")
 }],
 "loop": true,
 "name": &"chase",
+"speed": 13.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_so3yk")
+}],
+"loop": true,
+"name": &"damagedid",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_trqfi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_41s7f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_25vn7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eqwyt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f38uv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bshmj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xf87c")
+}],
+"loop": false,
+"name": &"dead",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vfabt")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
 }]
 
 [node name="buckluk" type="CharacterBody2D" groups=["hiti"]]
@@ -86,7 +180,7 @@ collision_mask = 13
 script = ExtResource("1_jnsvs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_6p1dy")
+shape = SubResource("RectangleShape2D_o5xy5")
 
 [node name="deadnode" type="Node2D" parent="."]
 
@@ -98,11 +192,11 @@ collision_mask = 10
 shape = SubResource("RectangleShape2D_fdcrw")
 
 [node name="anim" type="AnimatedSprite2D" parent="."]
-position = Vector2(-1, 0)
-scale = Vector2(0.75, 0.8125)
+scale = Vector2(0.8125, 0.75)
 sprite_frames = SubResource("SpriteFrames_kolyv")
-animation = &"chase"
+animation = &"dead"
 autoplay = "chase"
-frame_progress = 0.200233
+frame = 6
+frame_progress = 1.0
 
 [connection signal="body_entered" from="deadnode/dead" to="." method="_on_dead_body_entered"]

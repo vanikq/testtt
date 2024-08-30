@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://mob/penisman.gd" id="1_iq6k8"]
 [ext_resource type="PackedScene" uid="uid://cduva8ra63xaf" path="res://mob/mobbullet.tscn" id="2_g6wuv"]
-[ext_resource type="Texture2D" uid="uid://k2yod1utdjk1" path="res://graf/pistol_man.png" id="3_2hfqa"]
-[ext_resource type="Texture2D" uid="uid://dsre8vf1ywk2a" path="res://graf/buttonmob.png" id="4_f2u8y"]
-[ext_resource type="Texture2D" uid="uid://pxtjjfqj37ls" path="res://graf/pusk.png" id="5_to0aj"]
+[ext_resource type="Texture2D" uid="uid://cw67ktqle6oku" path="res://graf/pistol_man.png" id="3_2hfqa"]
+[ext_resource type="Texture2D" uid="uid://suusfhyreluy" path="res://graf/buttonmob.png" id="4_f2u8y"]
+[ext_resource type="Texture2D" uid="uid://dc67qhf1k6cs3" path="res://graf/pusca.png" id="5_yglms"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4vy68"]
 
@@ -106,7 +106,7 @@ bullet = ExtResource("2_g6wuv")
 shape = SubResource("CapsuleShape2D_4vy68")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(1.19209e-07, -7.10543e-15)
+position = Vector2(2, -1)
 scale = Vector2(1.25, 1.375)
 sprite_frames = SubResource("SpriteFrames_ppwbq")
 animation = &"idle"
@@ -122,9 +122,8 @@ target_position = Vector2(50, 0)
 collision_mask = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="RayCast2D"]
-position = Vector2(6, 0)
-scale = Vector2(1, 0.938)
-texture = ExtResource("5_to0aj")
+scale = Vector2(1, 0.9375)
+texture = ExtResource("5_yglms")
 
 [node name="Marker2D" type="Marker2D" parent="RayCast2D"]
 position = Vector2(15, 0)
