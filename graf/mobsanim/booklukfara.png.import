@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0r1ueg00p33u"
-path="res://.godot/imported/pistol.png-5879ae2513040c1c9aaac7e006b4c387.ctex"
+uid="uid://1jyp067vj7x3"
+path="res://.godot/imported/booklukfara.png-bcf3b39cab699c5117ecf949f7278509.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graf/pistol.png"
-dest_files=["res://.godot/imported/pistol.png-5879ae2513040c1c9aaac7e006b4c387.ctex"]
+source_file="res://graf/mobsanim/booklukfara.png"
+dest_files=["res://.godot/imported/booklukfara.png-bcf3b39cab699c5117ecf949f7278509.ctex"]
 
 [params]
 

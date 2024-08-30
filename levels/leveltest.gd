@@ -17,14 +17,10 @@ func _physics_process(_delta):
 	labelsc.text = "score " + str(Global.scoremobs)
 	HPbar.value = Global.hp
 	
-
 func _on_spawnmobs_timeout():
 	moba_spawn()
 
 func moba_spawn():
-	#var buck = book_preload.instantiate()
-	#buck.position = Vector2(randi_range(1,1150),randi_range(1,655))
-	#$mobiku.add_child(buck)
 	var random_value = randf()
 	var accumulated_probability = 0.0
 	for i in range(enemy_list.size()):
@@ -44,7 +40,3 @@ func whu_spawn():
 	var scene = selected_enemy.instantiate()
 	scene.position = Vector2(randi_range(1,1150),randi_range(1,655))
 	$mobiku.add_child(scene)
-
-
-func _on_start_pressed():
-	pass

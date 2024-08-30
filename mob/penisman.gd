@@ -21,7 +21,6 @@ var hpmob = 40
 var speedmob = 200
 var chase = false
 var player
-var damage = false
 @export var bullet: PackedScene
 @onready var anim = $AnimatedSprite2D
 

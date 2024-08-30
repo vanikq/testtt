@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://f3xqe85xe61k"
-path="res://.godot/imported/animation-sheet.png-a8c5c158f734ee1a00246b05c4c4ab41.ctex"
+uid="uid://crt73fkorrao8"
+path="res://.godot/imported/cubicbubicdead.png-1affdded521e00eb2c57bdc507c5d2da.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graf/animation-sheet.png"
-dest_files=["res://.godot/imported/animation-sheet.png-a8c5c158f734ee1a00246b05c4c4ab41.ctex"]
+source_file="res://graf/mobsanim/cubicbubicdead.png"
+dest_files=["res://.godot/imported/cubicbubicdead.png-1affdded521e00eb2c57bdc507c5d2da.ctex"]
 
 [params]
 

@@ -1,11 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://di7omcif4eqoc"]
+[gd_scene load_steps=7 format=3 uid="uid://di7omcif4eqoc"]
 
 [ext_resource type="Script" path="res://player/puzlik.gd" id="1_m4vbw"]
 [ext_resource type="PackedScene" uid="uid://bay7m8hxv2nvv" path="res://player/bullet.tscn" id="2_haxxe"]
-[ext_resource type="Texture2D" uid="uid://d121u51cwag6t" path="res://graf/newpix1.png" id="3_urnyv"]
-[ext_resource type="Texture2D" uid="uid://c8yavn23g2v5r" path="res://graf/puscaPLAYER.png" id="4_u83s7"]
+[ext_resource type="Texture2D" uid="uid://d121u51cwag6t" path="res://graf/playeranim/newpix1.png" id="3_urnyv"]
+[ext_resource type="Texture2D" uid="uid://c8yavn23g2v5r" path="res://graf/playeranim/puscaPLAYER.png" id="4_ia31b"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6xp1p"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bedny"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_urnyv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="puzlik" type="CharacterBody2D" groups=["Geogebra"]]
 collision_layer = 2
@@ -15,9 +26,8 @@ bullet = ExtResource("2_haxxe")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_6xp1p")
 
-[node name="SpritePuzlika" type="Sprite2D" parent="."]
-position = Vector2(0, -1)
-texture = ExtResource("3_urnyv")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_bedny")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(2, 2)
@@ -33,7 +43,7 @@ target_position = Vector2(44, 0)
 collision_mask = 5
 
 [node name="Pusk" type="Sprite2D" parent="RayCast2D"]
-texture = ExtResource("4_u83s7")
+texture = ExtResource("4_ia31b")
 
 [node name="Marker2D" type="Marker2D" parent="RayCast2D"]
 position = Vector2(13, 0)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cw67ktqle6oku"
-path="res://.godot/imported/pistol_man.png-24280f84512435213f4e6168f31ea4e3.ctex"
+uid="uid://suusfhyreluy"
+path="res://.godot/imported/buttonmob.png-64dc5d27ee07c8d79ee5640d1310ec46.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graf/pistol_man.png"
-dest_files=["res://.godot/imported/pistol_man.png-24280f84512435213f4e6168f31ea4e3.ctex"]
+source_file="res://graf/mobsanim/buttonmob.png"
+dest_files=["res://.godot/imported/buttonmob.png-64dc5d27ee07c8d79ee5640d1310ec46.ctex"]
 
 [params]
 

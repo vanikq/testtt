@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dok3hjgi82ipo"
-path="res://.godot/imported/booklukfara-shee.png-513a1d13f59ae9d1a655988fee06cf96.ctex"
+uid="uid://w4c0758qvrxs"
+path="res://.godot/imported/cubicbobuck.png-a6be5d769fc5883247acb25e30dd858c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graf/booklukfara-shee.png"
-dest_files=["res://.godot/imported/booklukfara-shee.png-513a1d13f59ae9d1a655988fee06cf96.ctex"]
+source_file="res://graf/mobsanim/cubicbobuck.png"
+dest_files=["res://.godot/imported/cubicbobuck.png-a6be5d769fc5883247acb25e30dd858c.ctex"]
 
 [params]
 

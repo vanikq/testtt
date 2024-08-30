@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dc67qhf1k6cs3"
-path="res://.godot/imported/pusca.png-b9141cf013204c5b16050fd1d09ac652.ctex"
+path="res://.godot/imported/pusca.png-338bb186f278bf3efc86ea2b0c025b2e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graf/pusca.png"
-dest_files=["res://.godot/imported/pusca.png-b9141cf013204c5b16050fd1d09ac652.ctex"]
+source_file="res://graf/mobsanim/pusca.png"
+dest_files=["res://.godot/imported/pusca.png-338bb186f278bf3efc86ea2b0c025b2e.ctex"]
 
 [params]
 

@@ -3,7 +3,6 @@ extends CharacterBody2D
 enum {
 	SPAWN,
 	IDLE,
-	DAMAGE,
 	DYING,
 	ATTACK
 }
@@ -16,8 +15,6 @@ var state : int:
 				spawn_state()
 			IDLE:
 				idle_state()
-			DAMAGE:
-				damage_state()
 			DYING:
 				dying_state()
 			ATTACK:
@@ -79,9 +76,6 @@ func spawn_state():
 	await anim.animation_finished
 	chase = true
 	state = IDLE
-
-func damage_state():
-	pass
 
 func dying_state():
 	chase = false

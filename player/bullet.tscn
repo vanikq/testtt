@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bay7m8hxv2nvv"]
 
 [ext_resource type="Script" path="res://player/bullet.gd" id="1_dlqm4"]
-[ext_resource type="Texture2D" uid="uid://vt4hsimm44m1" path="res://graf/pulea.png" id="2_53a6y"]
+[ext_resource type="Texture2D" uid="uid://vt4hsimm44m1" path="res://graf/playeranim/pulea.png" id="2_hv7tn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_54w1k"]
 radius = 5.0
@@ -16,6 +16,6 @@ shape = SubResource("CircleShape2D_54w1k")
 
 [node name="Pulea" type="Sprite2D" parent="."]
 scale = Vector2(0.625, 0.625)
-texture = ExtResource("2_53a6y")
+texture = ExtResource("2_hv7tn")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

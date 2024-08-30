@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d121u51cwag6t"
-path="res://.godot/imported/newpix1.png-e4b6ba5448692bdc509a2f2f023869dd.ctex"
+uid="uid://ds8ft7jlah37w"
+path="res://.godot/imported/cubicrubicrun.png-6068e9307a76e7ddbec4d4101dde4a46.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graf/newpix1.png"
-dest_files=["res://.godot/imported/newpix1.png-e4b6ba5448692bdc509a2f2f023869dd.ctex"]
+source_file="res://graf/mobsanim/cubicrubicrun.png"
+dest_files=["res://.godot/imported/cubicrubicrun.png-6068e9307a76e7ddbec4d4101dde4a46.ctex"]
 
 [params]
 

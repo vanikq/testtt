@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1jyp067vj7x3"
-path="res://.godot/imported/booklukfara.png-d764ea1df2eab09eed35490e0bfc47d6.ctex"
+uid="uid://c8yavn23g2v5r"
+path="res://.godot/imported/puscaPLAYER.png-043ec650c7a61eb9f5947c68f6087bac.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graf/booklukfara.png"
-dest_files=["res://.godot/imported/booklukfara.png-d764ea1df2eab09eed35490e0bfc47d6.ctex"]
+source_file="res://graf/playeranim/puscaPLAYER.png"
+dest_files=["res://.godot/imported/puscaPLAYER.png-043ec650c7a61eb9f5947c68f6087bac.ctex"]
 
 [params]
 

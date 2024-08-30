@@ -3,7 +3,6 @@ extends CharacterBody2D
 enum {
 	SPAWN,
 	IDLE,
-	DAMAGE,
 	DYING,
 	ATTACK
 }
@@ -15,8 +14,6 @@ var state : int:
 				spawn_state()
 			IDLE:
 				idle_state()
-			DAMAGE:
-				pass
 			DYING:
 				dead_state()
 			ATTACK:

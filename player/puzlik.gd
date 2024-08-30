@@ -7,10 +7,11 @@ enum {
 var state = MOVE
 @export var bullet : PackedScene
 var player_pos
+@onready var anim = $AnimatedSprite2D
+
 
 func _ready():
 	Global.hp = 100
-	Global.plbody = self
 
 func _physics_process(_delta):
 	match state:
@@ -19,7 +20,7 @@ func _physics_process(_delta):
 	
 	if Global.vray == false:
 		$RayCast2D.hide()
-	elif Global.vray == true:
+	elif Global.vray:
 		$RayCast2D.show()
 	
 	if Input.is_action_just_pressed("shoot"):

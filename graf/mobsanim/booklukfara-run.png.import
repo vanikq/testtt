@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vt4hsimm44m1"
-path="res://.godot/imported/pulea.png-ec4ec4afdc519791a71c9ce986652ad3.ctex"
+uid="uid://dtxhjiiroyq0l"
+path="res://.godot/imported/booklukfara-run.png-2cf7fe30261e15ecced83ac77f741db8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graf/pulea.png"
-dest_files=["res://.godot/imported/pulea.png-ec4ec4afdc519791a71c9ce986652ad3.ctex"]
+source_file="res://graf/mobsanim/booklukfara-run.png"
+dest_files=["res://.godot/imported/booklukfara-run.png-2cf7fe30261e15ecced83ac77f741db8.ctex"]
 
 [params]
 

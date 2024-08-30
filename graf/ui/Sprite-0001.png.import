@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5r5tsra032m0"
-path="res://.godot/imported/booklukfara-dead.png-ebb4b17d41bc4e3b01a05cae6a19a23a.ctex"
+uid="uid://b7fv6pparnmsm"
+path="res://.godot/imported/Sprite-0001.png-4ec17e77948de24c6aacb537742a2639.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graf/booklukfara-dead.png"
-dest_files=["res://.godot/imported/booklukfara-dead.png-ebb4b17d41bc4e3b01a05cae6a19a23a.ctex"]
+source_file="res://graf/ui/Sprite-0001.png"
+dest_files=["res://.godot/imported/Sprite-0001.png-4ec17e77948de24c6aacb537742a2639.ctex"]
 
 [params]
 

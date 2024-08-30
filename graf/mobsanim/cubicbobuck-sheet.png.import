@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://drqr04dc7hs03"
-path="res://.godot/imported/cubicbobuck-sheet.png-3bcfb66d5fe472eeaf5a3ab5418e8be2.ctex"
+path="res://.godot/imported/cubicbobuck-sheet.png-d9e31462f4ecb1f60a5ffea32dd2c811.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graf/cubicbobuck-sheet.png"
-dest_files=["res://.godot/imported/cubicbobuck-sheet.png-3bcfb66d5fe472eeaf5a3ab5418e8be2.ctex"]
+source_file="res://graf/mobsanim/cubicbobuck-sheet.png"
+dest_files=["res://.godot/imported/cubicbobuck-sheet.png-d9e31462f4ecb1f60a5ffea32dd2c811.ctex"]
 
 [params]
 

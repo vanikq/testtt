@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dg5l4wumegir2"
-path="res://.godot/imported/niga.png-dd8f38363d8f4b9c7a4b68b79f8cc43e.ctex"
+uid="uid://8yppgyh3pbm1"
+path="res://.godot/imported/image.png-e2034b36b792ce368bef18263f01394c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graf/niga.png"
-dest_files=["res://.godot/imported/niga.png-dd8f38363d8f4b9c7a4b68b79f8cc43e.ctex"]
+source_file="res://graf/ui/image.png"
+dest_files=["res://.godot/imported/image.png-e2034b36b792ce368bef18263f01394c.ctex"]
 
 [params]
 

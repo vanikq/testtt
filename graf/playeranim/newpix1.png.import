@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8yavn23g2v5r"
-path="res://.godot/imported/puscaPLAYER.png-f34679f339f571e900097b2260800f78.ctex"
+uid="uid://d121u51cwag6t"
+path="res://.godot/imported/newpix1.png-189e16978246539e8794f91e68539d35.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graf/puscaPLAYER.png"
-dest_files=["res://.godot/imported/puscaPLAYER.png-f34679f339f571e900097b2260800f78.ctex"]
+source_file="res://graf/playeranim/newpix1.png"
+dest_files=["res://.godot/imported/newpix1.png-189e16978246539e8794f91e68539d35.ctex"]
 
 [params]
 

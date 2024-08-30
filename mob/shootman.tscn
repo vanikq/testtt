@@ -2,50 +2,50 @@
 
 [ext_resource type="Script" path="res://mob/penisman.gd" id="1_iq6k8"]
 [ext_resource type="PackedScene" uid="uid://cduva8ra63xaf" path="res://mob/mobbullet.tscn" id="2_g6wuv"]
-[ext_resource type="Texture2D" uid="uid://cw67ktqle6oku" path="res://graf/pistol_man.png" id="3_2hfqa"]
-[ext_resource type="Texture2D" uid="uid://suusfhyreluy" path="res://graf/buttonmob.png" id="4_f2u8y"]
-[ext_resource type="Texture2D" uid="uid://dc67qhf1k6cs3" path="res://graf/pusca.png" id="5_yglms"]
+[ext_resource type="Texture2D" uid="uid://cw67ktqle6oku" path="res://graf/mobsanim/pistol_man.png" id="3_wr8pu"]
+[ext_resource type="Texture2D" uid="uid://suusfhyreluy" path="res://graf/mobsanim/buttonmob.png" id="4_vpw3i"]
+[ext_resource type="Texture2D" uid="uid://dc67qhf1k6cs3" path="res://graf/mobsanim/pusca.png" id="5_cwiur"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4vy68"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uwhw6"]
-atlas = ExtResource("3_2hfqa")
+atlas = ExtResource("3_wr8pu")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nt4an"]
-atlas = ExtResource("3_2hfqa")
+atlas = ExtResource("3_wr8pu")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g838y"]
-atlas = ExtResource("3_2hfqa")
+atlas = ExtResource("3_wr8pu")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3o5yb"]
-atlas = ExtResource("3_2hfqa")
+atlas = ExtResource("3_wr8pu")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6j5s1"]
-atlas = ExtResource("3_2hfqa")
+atlas = ExtResource("3_wr8pu")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xgbio"]
-atlas = ExtResource("3_2hfqa")
+atlas = ExtResource("3_wr8pu")
 region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5rl11"]
-atlas = ExtResource("4_f2u8y")
+atlas = ExtResource("4_vpw3i")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jlgi7"]
-atlas = ExtResource("4_f2u8y")
+atlas = ExtResource("4_vpw3i")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qasri"]
-atlas = ExtResource("4_f2u8y")
+atlas = ExtResource("4_vpw3i")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4cf30"]
-atlas = ExtResource("4_f2u8y")
+atlas = ExtResource("4_vpw3i")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ppwbq"]
@@ -123,7 +123,7 @@ collision_mask = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="RayCast2D"]
 scale = Vector2(1, 0.9375)
-texture = ExtResource("5_yglms")
+texture = ExtResource("5_cwiur")
 
 [node name="Marker2D" type="Marker2D" parent="RayCast2D"]
 position = Vector2(15, 0)

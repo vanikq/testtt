@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://suusfhyreluy"
-path="res://.godot/imported/buttonmob.png-a952d824159bd61f6ff108a9180733a9.ctex"
+uid="uid://5r5tsra032m0"
+path="res://.godot/imported/booklukfara-dead.png-61c3e206696f235b0e162e265139a275.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graf/buttonmob.png"
-dest_files=["res://.godot/imported/buttonmob.png-a952d824159bd61f6ff108a9180733a9.ctex"]
+source_file="res://graf/mobsanim/booklukfara-dead.png"
+dest_files=["res://.godot/imported/booklukfara-dead.png-61c3e206696f235b0e162e265139a275.ctex"]
 
 [params]
 

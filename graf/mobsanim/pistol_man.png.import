@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7fv6pparnmsm"
-path="res://.godot/imported/Sprite-0001.png-c9625bc053176cae501ac5783334919b.ctex"
+uid="uid://cw67ktqle6oku"
+path="res://.godot/imported/pistol_man.png-04ac207d6dd4cdc41874d1e5ece7e4d2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graf/Sprite-0001.png"
-dest_files=["res://.godot/imported/Sprite-0001.png-c9625bc053176cae501ac5783334919b.ctex"]
+source_file="res://graf/mobsanim/pistol_man.png"
+dest_files=["res://.godot/imported/pistol_man.png-04ac207d6dd4cdc41874d1e5ece7e4d2.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crt73fkorrao8"
-path="res://.godot/imported/cubicbubicdead.png-4a2ff59007b6570e1627da37f054b72b.ctex"
+uid="uid://cgga61rqsbb6b"
+path="res://.godot/imported/Sprite-0003.png-b8e8575e28c29a45a3705f0124b8e4a0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graf/cubicbubicdead.png"
-dest_files=["res://.godot/imported/cubicbubicdead.png-4a2ff59007b6570e1627da37f054b72b.ctex"]
+source_file="res://graf/ui/Sprite-0003.png"
+dest_files=["res://.godot/imported/Sprite-0003.png-b8e8575e28c29a45a3705f0124b8e4a0.ctex"]
 
 [params]
 
