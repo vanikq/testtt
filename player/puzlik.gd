@@ -50,4 +50,3 @@ func move_state():
 		velocity = direction * Global.speed
 	else:
 		velocity = Vector2(0,0)
-
