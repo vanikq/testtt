@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://crt73fkorrao8" path="res://graf/mobsanim/cubicbubicdead.png" id="5_oed6i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mhswg"]
-size = Vector2(32, 30)
+size = Vector2(26, 30)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n8x6j"]
 size = Vector2(46, 46)
@@ -131,7 +131,7 @@ region = Rect2(0, 0, 32, 32)
 [sub_resource type="SpriteFrames" id="SpriteFrames_pvgif"]
 animations = [{
 "frames": [{
-"duration": 4.0,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_dbhcu")
 }, {
 "duration": 1.0,
@@ -266,10 +266,8 @@ shape = SubResource("RectangleShape2D_n8x6j")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1, 0.9375)
 sprite_frames = SubResource("SpriteFrames_pvgif")
-animation = &"dying"
+animation = &"cade"
 autoplay = "idle"
-frame = 7
-frame_progress = 1.0
 speed_scale = 0.5
 
 [connection signal="body_entered" from="attack" to="." method="_on_attack_body_entered"]
