@@ -4,14 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://bay7m8hxv2nvv" path="res://player/bullet.tscn" id="2_haxxe"]
 [ext_resource type="Texture2D" uid="uid://d121u51cwag6t" path="res://graf/playeranim/newpix1.png" id="3_urnyv"]
 [ext_resource type="Texture2D" uid="uid://c8yavn23g2v5r" path="res://graf/playeranim/puscaPLAYER.png" id="4_ia31b"]
+[ext_resource type="Texture2D" uid="uid://bq3wum8gj1a6o" path="res://graf/icon.svg" id="5_nb16l"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6xp1p"]
-radius = 17.0
-height = 58.0
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_31yyi"]
-atlas = ExtResource("3_urnyv")
-region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bedny"]
 animations = [{
@@ -22,30 +17,10 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 5.0
-}, {
-"frames": [{
-"duration": 5.0,
-"texture": SubResource("AtlasTexture_31yyi")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_31yyi")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_31yyi")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_31yyi")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_31yyi")
-}],
-"loop": false,
-"name": &"shut",
-"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pemdv"]
-size = Vector2(302, 210)
+size = Vector2(200, 162)
 
 [node name="puzlik" type="CharacterBody2D" groups=["Geogebra"]]
 collision_layer = 2
@@ -56,9 +31,7 @@ bullet = ExtResource("2_haxxe")
 shape = SubResource("CapsuleShape2D_6xp1p")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(2, 1.8125)
 sprite_frames = SubResource("SpriteFrames_bedny")
-animation = &"shut"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(2, 2)
@@ -74,18 +47,33 @@ target_position = Vector2(44, 0)
 collision_mask = 5
 
 [node name="Pusk" type="Sprite2D" parent="RayCast2D"]
-scale = Vector2(2, 2)
 texture = ExtResource("4_ia31b")
 
 [node name="Marker2D" type="Marker2D" parent="RayCast2D"]
-position = Vector2(25, 0)
+position = Vector2(13, 0)
 
-[node name="Area2D" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 4
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -190.0
+offset_top = -183.0
+offset_right = -34.0
+offset_bottom = -33.0
+grow_horizontal = 0
+grow_vertical = 0
+icon = ExtResource("5_nb16l")
+flat = true
+
+[node name="Area2D" type="Area2D" parent="." groups=["Geogebra"]]
 
 [node name="shootzone" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_pemdv")
 
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

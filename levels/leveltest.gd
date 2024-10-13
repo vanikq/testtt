@@ -6,17 +6,14 @@ var enemy_list = [
 ]
 var selected_enemy
 var enemy_chance = [0.6, 0.1, 0.3]
-@onready var labelsc = $CanvasLayer/Label
-@onready var HPbar = $CanvasLayer/TextureProgressBar
-@onready var start = $CanvasLayer/start
+@onready var labelsc = $CanvasLayer/MarginContainer/Label
+@onready var HPbar = $CanvasLayer/MarginContainer/TextureProgressBar
 @onready var spawnmobs = $mobiku/spawnmobs
 @onready var raidmobs = $mobiku/raidmobs
 
 func _ready():
 	Global.scoremobs = 0
 	Global.vray = false
-	spawnmobs.paused = true
-	raidmobs.paused = true
 
 func _physics_process(_delta):
 	labelsc.text = "score " + str(Global.scoremobs)
@@ -46,10 +43,3 @@ func whu_spawn():
 	var scene = selected_enemy.instantiate()
 	scene.position = Vector2(randi_range(1,1150),randi_range(1,655))
 	$mobiku.add_child(scene)
-
-
-func _on_start_pressed():
-	spawnmobs.paused = false
-	raidmobs.paused = false
-	start.disabled = true
-	start.hide()

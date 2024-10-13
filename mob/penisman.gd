@@ -71,6 +71,6 @@ func _on_player_position_upd(player_pos):
 	player = player_pos
 	
 func idle_state():
-	anim.play("idle")
+	anim.play("idli")
 	$RayCast2D/Sprite2D.show()
 	chase = true

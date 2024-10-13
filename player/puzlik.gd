@@ -1,32 +1,29 @@
 extends CharacterBody2D
 
 enum {
-	MOVE
+	MOVE,
+	SHOOTING
 }
 
 var state = MOVE
 @export var bullet : PackedScene
 var player_pos
 @onready var anim = $AnimatedSprite2D
+var targets = []
+var current_target = null
 
 
 func _ready():
 	Global.hp = 100
+	$Area2D.monitoring = true
+	Functions.connect("shoot_button", Callable(self, "shoto"))
 
 func _physics_process(_delta):
 	match state:
 		MOVE:
 			move_state()
-	
-	if Global.vray == false:
-		$RayCast2D.hide()
-	elif Global.vray:
-		$RayCast2D.show()
-	
-	if Input.is_action_just_pressed("shoot"):
-		shoot()
-	
-	$RayCast2D.look_at(get_global_mouse_position())
+		SHOOTING:
+			shooting_state()
 	
 	move_and_slide()
 	
@@ -38,11 +35,13 @@ func _physics_process(_delta):
 	player_pos = self.position
 	Functions.emit_signal("player_positon_upd", player_pos)
 
-func shoot():
-	if Global.vray == true:
-		var b = bullet.instantiate()
-		add_child(b)
-		b.transform = $RayCast2D.transform
+func _process(_delta):
+	current_target = get_closest_target()
+	if current_target != null:
+		$RayCast2D.look_at(current_target.global_position)
+
+func shoto():
+	state = SHOOTING
 
 func move_state():
 	var direction = Input.get_vector("a", "d", "w", "s")
@@ -50,3 +49,29 @@ func move_state():
 		velocity = direction * Global.speed
 	else:
 		velocity = Vector2(0,0)
+
+func shooting_state():
+	var b = bullet.instantiate()
+	add_child(b)
+	b.transform = $RayCast2D.transform
+	anim.play("shut")
+	await anim.animation_finished
+	state = MOVE
+
+func _on_area_2d_body_entered(body):
+	if body.is_in_group("hiti"):
+		targets.push_back(body)
+
+func _on_area_2d_body_exited(body):
+	if body.is_in_group("hiti"):
+		targets.erase(body)
+
+func get_closest_target():
+	var closest_enemy = null
+	var closest_distance = INF
+	for enemy in get_tree().get_nodes_in_group("hiti"):
+		var distance = global_position.distance_to(enemy.global_position)
+		if distance < closest_distance:
+			closest_distance = distance
+			closest_enemy = enemy
+	return closest_enemy

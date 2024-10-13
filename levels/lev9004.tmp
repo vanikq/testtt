@@ -82,30 +82,14 @@ size_flags_horizontal = 4
 size_flags_vertical = 0
 theme_override_font_sizes/font_size = 64
 
-[node name="pause" type="Button" parent="CanvasLayer"]
+[node name="pause" type="Button" parent="CanvasLayer/MarginContainer"]
 process_mode = 3
 clip_contents = true
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -150.0
-offset_top = 19.0
-offset_right = -26.0
-offset_bottom = 82.0
-grow_horizontal = 0
+layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
 theme_override_font_sizes/font_size = 40
 text = "pause"
-
-[node name="pause menu" parent="CanvasLayer" instance=ExtResource("4_ohnot")]
-process_mode = 2
-visible = false
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
 
 [node name="Virtual Joystick" parent="CanvasLayer" instance=ExtResource("12_0x34v")]
 offset_top = -300.0
@@ -114,11 +98,15 @@ size_flags_horizontal = 0
 size_flags_vertical = 8
 pressed_color = Color(0.699653, 0.699653, 0.699653, 1)
 
+[node name="pause menu" parent="CanvasLayer" instance=ExtResource("4_ohnot")]
+process_mode = 2
+visible = false
+
 [node name="shootbuttons" parent="CanvasLayer" instance=ExtResource("10_qasn0")]
-offset_left = -38.0
-offset_top = -33.0
-offset_right = -38.0
-offset_bottom = -33.0
+offset_left = -267.0
+offset_top = -3.0
+offset_right = -267.0
+offset_bottom = -3.0
 
 [node name="player" type="Node2D" parent="."]
 
@@ -140,7 +128,7 @@ autostart = true
 wait_time = 10.0
 autostart = true
 
-[connection signal="pressed" from="CanvasLayer/pause" to="manager" method="_on_pause_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/pause" to="manager" method="_on_pause_pressed"]
 [connection signal="pressed" from="CanvasLayer/pause menu/Panel/VBoxContainer/resume" to="manager" method="_on_resume_pressed"]
 [connection signal="pressed" from="CanvasLayer/pause menu/Panel/VBoxContainer/settings" to="manager" method="_on_settings_pressed"]
 [connection signal="pressed" from="CanvasLayer/pause menu/Panel/VBoxContainer/quit" to="manager" method="_on_quit_pressed"]

@@ -7,10 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://crt73fkorrao8" path="res://graf/mobsanim/cubicbubicdead.png" id="5_oed6i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mhswg"]
-size = Vector2(26, 30)
+size = Vector2(44, 54)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n8x6j"]
-size = Vector2(46, 46)
+size = Vector2(62, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dbhcu"]
 atlas = ExtResource("2_ktpuv")
@@ -253,7 +253,7 @@ collision_layer = 4
 collision_mask = 13
 script = ExtResource("1_3rffw")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["hiti"]]
 shape = SubResource("RectangleShape2D_mhswg")
 
 [node name="attack" type="Area2D" parent="."]
@@ -264,10 +264,11 @@ collision_mask = 10
 shape = SubResource("RectangleShape2D_n8x6j")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(1, 0.9375)
+scale = Vector2(1.75, 1.6875)
 sprite_frames = SubResource("SpriteFrames_pvgif")
-animation = &"cade"
+animation = &"casedamage"
 autoplay = "idle"
+frame_progress = 0.251977
 speed_scale = 0.5
 
 [connection signal="body_entered" from="attack" to="." method="_on_attack_body_entered"]
