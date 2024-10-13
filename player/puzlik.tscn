@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://di7omcif4eqoc"]
+[gd_scene load_steps=8 format=3 uid="uid://di7omcif4eqoc"]
 
 [ext_resource type="Script" path="res://player/puzlik.gd" id="1_m4vbw"]
 [ext_resource type="PackedScene" uid="uid://bay7m8hxv2nvv" path="res://player/bullet.tscn" id="2_haxxe"]
@@ -9,10 +9,6 @@
 radius = 17.0
 height = 58.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_31yyi"]
-atlas = ExtResource("3_urnyv")
-region = Rect2(0, 0, 32, 32)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_bedny"]
 animations = [{
 "frames": [{
@@ -21,26 +17,6 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 5.0,
-"texture": SubResource("AtlasTexture_31yyi")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_31yyi")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_31yyi")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_31yyi")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_31yyi")
-}],
-"loop": false,
-"name": &"shut",
 "speed": 5.0
 }]
 
@@ -58,7 +34,6 @@ shape = SubResource("CapsuleShape2D_6xp1p")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2, 1.8125)
 sprite_frames = SubResource("SpriteFrames_bedny")
-animation = &"shut"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(2, 2)

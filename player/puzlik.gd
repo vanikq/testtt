@@ -54,8 +54,6 @@ func shooting_state():
 	var b = bullet.instantiate()
 	add_child(b)
 	b.transform = $RayCast2D.transform
-	anim.play("shut")
-	await anim.animation_finished
 	state = MOVE
 
 func _on_area_2d_body_entered(body):
