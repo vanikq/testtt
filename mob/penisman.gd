@@ -46,7 +46,7 @@ func _physics_process(_delta):
 	if hpmob <= 0 :
 		Global.scoremobs += 1
 		queue_free()
-	
+
 func spawn_state():
 	$RayCast2D/Sprite2D.hide()
 	anim.play("spawn")
@@ -66,10 +66,9 @@ func attack_state():
 	b.transform = $RayCast2D.transform
 	state = IDLE
 
-
 func _on_player_position_upd(player_pos):
 	player = player_pos
-	
+
 func idle_state():
 	anim.play("idli")
 	$RayCast2D/Sprite2D.show()

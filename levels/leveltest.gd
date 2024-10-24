@@ -1,11 +1,14 @@
 extends Node2D
+
 var enemy_list = [
 	preload("res://mob/cubicbubick.tscn"),
 	preload("res://mob/buckluk.tscn"),
 	preload("res://mob/shootman.tscn")
 ]
+
 var selected_enemy
 var enemy_chance = [0.6, 0.1, 0.3]
+
 @onready var labelsc = $CanvasLayer/MarginContainer/Label
 @onready var HPbar = $CanvasLayer/MarginContainer/TextureProgressBar
 @onready var spawnmobs = $mobiku/spawnmobs
@@ -13,13 +16,11 @@ var enemy_chance = [0.6, 0.1, 0.3]
 
 func _ready():
 	Global.scoremobs = 0
-	Global.vray = false
 
 func _physics_process(_delta):
 	labelsc.text = "score " + str(Global.scoremobs)
 	HPbar.value = Global.hp
-	
-	
+
 func _on_spawnmobs_timeout():
 	moba_spawn()
 
@@ -32,6 +33,7 @@ func moba_spawn():
 			selected_enemy = enemy_list[i]
 			break
 	whu_spawn()
+
 func raid_spawn():
 	_on_raidmobs_timeout()
 

@@ -1,0 +1,36 @@
+# LANGUAGE translation for testt for the following files:
+# res://ui/canvas_layer.gd
+#
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: testt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: ui/canvas_layer.gd
+msgid "PLAY"
+msgstr ""
+
+#: ui/canvas_layer.gd
+msgid "SETTINGS"
+msgstr ""
+
+#: ui/canvas_layer.gd
+msgid "QUIT"
+msgstr ""
+
+#: ui/canvas_layer.gd
+msgid "LANGUAGE"
+msgstr ""
+
+#: ui/canvas_layer.gd
+msgid "ENG"
+msgstr ""
+
+#: ui/canvas_layer.gd
+msgid "RU"
+msgstr ""

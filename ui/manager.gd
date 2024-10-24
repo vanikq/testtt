@@ -24,7 +24,7 @@ func _on_quit_pressed():
 
 func _on_settings_pressed():
 	get_tree().paused = false
-	get_tree().change_scene_to_file("res://menu.tscn")
+	get_tree().change_scene_to_file("res://ui/menu.tscn")
 
 func _on_pause_pressed():
 	game_paused = !game_paused

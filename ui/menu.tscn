@@ -1,0 +1,118 @@
+[gd_scene load_steps=9 format=3 uid="uid://lb4ojvfpkxgw"]
+
+[ext_resource type="Script" path="res://ui/menu.gd" id="1_bxc7c"]
+[ext_resource type="Script" path="res://ui/menumanag.gd" id="2_ggnl1"]
+[ext_resource type="Texture2D" uid="uid://cy2x5j0xjdshp" path="res://graf/ui/menu screen.png" id="3_hpvia"]
+[ext_resource type="FontFile" uid="uid://ce7lo66jluat" path="res://graf/ui/fonts/m6x11plus.ttf" id="4_ge5om"]
+[ext_resource type="Script" path="res://ui/settingsmenu.gd" id="4_gotws"]
+[ext_resource type="PackedScene" uid="uid://dsyi6qavpsbr4" path="res://ui/settings.tscn" id="5_71xq8"]
+[ext_resource type="AudioStream" uid="uid://dj7sdqkasxkd2" path="res://graf/music/menu music.mp3" id="6_nwnt5"]
+[ext_resource type="AudioStream" uid="uid://ysr2mv7mm0gr" path="res://graf/music/video-game-vintage-jump-ascend_zkbs6f4_.mp3" id="7_ci7m6"]
+
+[node name="menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bxc7c")
+
+[node name="menumanag" type="Node" parent="."]
+script = ExtResource("2_ggnl1")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_hpvia")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 35
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 35
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="play" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/CenterContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ge5om")
+theme_override_font_sizes/font_size = 100
+text = "play"
+flat = true
+
+[node name="CenterContainer3" type="CenterContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="settings" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/CenterContainer3"]
+clip_contents = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ge5om")
+theme_override_font_sizes/font_size = 100
+text = "settings"
+flat = true
+
+[node name="CenterContainer2" type="CenterContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+clip_contents = true
+layout_mode = 2
+
+[node name="quit" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/CenterContainer2"]
+clip_contents = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ge5om")
+theme_override_font_sizes/font_size = 100
+text = "quit"
+flat = true
+
+[node name="settingsmenu" type="CanvasLayer" parent="."]
+script = ExtResource("4_gotws")
+
+[node name="settings" parent="settingsmenu" instance=ExtResource("5_71xq8")]
+visible = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_nwnt5")
+autoplay = true
+bus = &"music"
+
+[node name="buttons" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_ci7m6")
+volume_db = -10.0
+bus = &"ui"
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/CenterContainer/play" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/CenterContainer3/settings" to="menumanag" method="_on_settings_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/CenterContainer2/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="settingsmenu/settings/MarginContainer/back" to="menumanag" method="_on_back_pressed"]
+[connection signal="pressed" from="settingsmenu/settings/musi" to="menumanag" method="_on_musi_pressed"]
+[connection signal="pressed" from="settingsmenu/settings/ui" to="menumanag" method="_on_ui_pressed"]
+[connection signal="value_changed" from="settingsmenu/settings/HSlider" to="menumanag" method="_on_h_slider_value_changed"]
+[connection signal="pressed" from="settingsmenu/settings/lang/english" to="settingsmenu" method="_on_english_pressed"]
+[connection signal="pressed" from="settingsmenu/settings/lang/russian" to="settingsmenu" method="_on_russian_pressed"]
+
+[editable path="settingsmenu/settings"]

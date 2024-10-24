@@ -1,0 +1,34 @@
+# LANGUAGE translation for testt for the following files:
+# res://ui/settingsmenu.gd
+#
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: testt\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.5\n"
+
+#: ui/settingsmenu.gd
+msgid "PLAY"
+msgstr "играть"
+
+#: ui/settingsmenu.gd
+msgid "SETTINGS"
+msgstr "настройки"
+
+#: ui/settingsmenu.gd
+msgid "QUIT"
+msgstr "выйти"
+
+#: ui/settingsmenu.gd
+msgid "LANG"
+msgstr "язык"

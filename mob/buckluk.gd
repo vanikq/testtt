@@ -29,7 +29,7 @@ var player
 func _ready():
 	state = SPAWN
 	Functions.connect("player_positon_upd", Callable(self, "_on_player_position_upd"))
-	
+
 func _physics_process(_delta):
 	var direction = (player - self.position).normalized()
 	if chase == true :
@@ -71,7 +71,7 @@ func attack_state():
 func idle_state():
 	await get_tree().create_timer(0.1).timeout
 	deadzone.disabled = false
-	
+
 func dead_state():
 	chase = false
 	anim.play("dead")

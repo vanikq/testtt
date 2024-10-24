@@ -53,7 +53,6 @@ func _physics_process(_delta):
 		Global.scoremobs += 1
 		state = DYING
 
-
 func _on_player_position_upd(player_pos):
 	player = player_pos
 

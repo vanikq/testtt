@@ -11,10 +11,10 @@ config_version=5
 [application]
 
 config/name="testt"
-run/main_scene="res://menu.tscn"
+run/main_scene="res://ui/menu.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
-boot_splash/bg_color=Color(0, 0, 0, 1)
-boot_splash/image="res://graf/ui/loading.png"
+boot_splash/image="res://graf/ui/load2.png"
+boot_splash/fullsize=false
 config/icon="res://graf/icon.svg"
 
 [autoload]
@@ -68,6 +68,11 @@ esc={
 [input_devices]
 
 pointing/emulate_touch_from_mouse=true
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://languag/en.po", "res://languag/ru.po")
+locale/translations_pot_files=PackedStringArray("res://ui/settingsmenu.gd")
 
 [layer_names]
 

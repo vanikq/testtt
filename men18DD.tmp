@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://lb4ojvfpkxgw"]
+[gd_scene load_steps=6 format=3 uid="uid://lb4ojvfpkxgw"]
 
 [ext_resource type="Script" path="res://menu.gd" id="1_udi4p"]
-[ext_resource type="Texture2D" uid="uid://8yppgyh3pbm1" path="res://graf/ui/image.png" id="2_y12k7"]
+[ext_resource type="Texture2D" uid="uid://cy2x5j0xjdshp" path="res://graf/ui/menu screen.png" id="2_1ci43"]
+[ext_resource type="FontFile" uid="uid://ce7lo66jluat" path="res://graf/ui/fonts/m6x11plus.ttf" id="3_6eyl1"]
+[ext_resource type="PackedScene" uid="uid://dsyi6qavpsbr4" path="res://settings.tscn" id="4_idr8a"]
+[ext_resource type="Script" path="res://menumanag.gd" id="5_k6wtm"]
 
 [node name="menu" type="Control"]
 layout_mode = 3
@@ -12,6 +15,9 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_udi4p")
 
+[node name="menumanag" type="Node" parent="."]
+script = ExtResource("5_k6wtm")
+
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -19,7 +25,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_y12k7")
+texture = ExtResource("2_1ci43")
 expand_mode = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -36,32 +42,58 @@ theme_override_constants/margin_bottom = 20
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
-size_flags_vertical = 0
+size_flags_vertical = 4
 
 [node name="CenterContainer" type="CenterContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 clip_contents = true
 layout_mode = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 4
 size_flags_vertical = 0
 
 [node name="start" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/CenterContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_6eyl1")
 theme_override_font_sizes/font_size = 100
 text = "start"
+flat = true
+
+[node name="CenterContainer3" type="CenterContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="settings" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/CenterContainer3"]
+clip_contents = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_6eyl1")
+theme_override_font_sizes/font_size = 100
+text = "settings"
+flat = true
 
 [node name="CenterContainer2" type="CenterContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 clip_contents = true
 layout_mode = 2
 
 [node name="quit" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/CenterContainer2"]
+clip_contents = true
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_6eyl1")
 theme_override_font_sizes/font_size = 100
 text = "quit"
+flat = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="settings" parent="CanvasLayer" instance=ExtResource("4_idr8a")]
+visible = false
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/CenterContainer/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/CenterContainer3/settings" to="menumanag" method="_on_settings_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/CenterContainer2/quit" to="." method="_on_quit_pressed"]
+[connection signal="value_changed" from="CanvasLayer/settings/HSlider" to="menumanag" method="_on_h_slider_value_changed"]
+
+[editable path="CanvasLayer/settings"]
