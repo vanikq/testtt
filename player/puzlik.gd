@@ -27,9 +27,6 @@ func _physics_process(_delta):
 	
 	if Input.is_action_just_pressed("shoot"):
 		shoot()
-	
-	player_pos = self.position
-	Functions.emit_signal("player_positon_upd", player_pos)
 
 func _process(_delta):
 	current_target = get_closest_target()

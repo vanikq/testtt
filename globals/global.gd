@@ -2,10 +2,10 @@ extends Node
 
 #mobs and caracteristic
 
-var scoremobs = 0
-var hp = 100
-var damage = 20
-var speed = 500
+var scoremobs: int = 0
+var hp: int = 100
+var damage: int = 20
+var speed: int = 500
 
 #shop
-var bulletstop = true
+var bulletstop: bool = true

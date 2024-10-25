@@ -19,19 +19,18 @@ var state : int:
 			ATTACK:
 				attack_state()
 
-var hpmob = 20
-var speedmob = 510
-var chase = false
+var hpmob: int = 20
+var speedmob:int = 510
+var chase: bool = false
 @onready var anim = $anim
 @onready var deadzone = $deadnode/dead/deadzone
-var player
 
 func _ready():
 	state = SPAWN
-	Functions.connect("player_positon_upd", Callable(self, "_on_player_position_upd"))
 
 func _physics_process(_delta):
-	var direction = (player - self.position).normalized()
+	var player = get_tree().get_first_node_in_group("Geogebra")
+	var direction = (player.position - self.position).normalized()
 	if chase == true :
 		anim.play("chase")
 		velocity = direction * speedmob
@@ -48,9 +47,6 @@ func _physics_process(_delta):
 		hpmob = 1
 		Global.scoremobs += 2
 		state = DYING
-
-func _on_player_position_upd(player_pos):
-	player = player_pos
 
 func _on_dead_body_entered(body):
 	if body.is_in_group("Geogebra"):

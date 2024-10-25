@@ -17,19 +17,18 @@ var state : int:
 			ATTACK:
 				attack_state()
 
-var hpmob = 40
-var speedmob = 200
-var chase = false
-var player
+var hpmob:int = 40
+var speedmob: int = 200
+var chase: bool = false
 @export var bullet: PackedScene
 @onready var anim = $AnimatedSprite2D
 
 func _ready():
 	state = SPAWN
-	Functions.connect("player_positon_upd", Callable(self, "_on_player_position_upd"))
 
 func _physics_process(_delta):
-	var direction = (player - self.position).normalized()
+	var player = get_tree().get_first_node_in_group("Geogebra")
+	var direction = (player.position - self.position).normalized()
 	if chase == true :
 		velocity = direction * speedmob
 	else:
@@ -41,7 +40,7 @@ func _physics_process(_delta):
 	
 	move_and_slide()
 	
-	$RayCast2D.look_at(player)
+	$RayCast2D.look_at(player.position)
 	
 	if hpmob <= 0 :
 		Global.scoremobs += 1
@@ -65,9 +64,6 @@ func attack_state():
 	add_child(b)
 	b.transform = $RayCast2D.transform
 	state = IDLE
-
-func _on_player_position_upd(player_pos):
-	player = player_pos
 
 func idle_state():
 	anim.play("idli")

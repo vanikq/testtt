@@ -8,7 +8,6 @@ extends CanvasLayer
 @onready var lang = $settings/lang
 
 func _ready():
-	TranslationServer.set_locale("en")
 	updateUI()
 
 func _on_english_pressed():
