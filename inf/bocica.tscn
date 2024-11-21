@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://ce13shvwiygo6"]
+
+[ext_resource type="Script" path="res://inf/bocica.gd" id="1_hivvf"]
+[ext_resource type="Texture2D" uid="uid://bv314pc2gwn2j" path="res://graf/pricoale/Sprite-0001.png" id="2_aqtv8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gbpt6"]
+size = Vector2(16, 13)
+
+[node name="bocica" type="Area2D"]
+collision_layer = 32
+collision_mask = 6
+script = ExtResource("1_hivvf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_gbpt6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(8, 9)
+texture = ExtResource("2_aqtv8")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -7,10 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://crt73fkorrao8" path="res://graf/mobsanim/cubicbubicdead.png" id="5_oed6i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mhswg"]
-size = Vector2(44, 54)
+size = Vector2(26, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n8x6j"]
-size = Vector2(62, 64)
+size = Vector2(40, 42)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dbhcu"]
 atlas = ExtResource("2_ktpuv")
@@ -264,7 +264,6 @@ collision_mask = 10
 shape = SubResource("RectangleShape2D_n8x6j")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(1.75, 1.6875)
 sprite_frames = SubResource("SpriteFrames_pvgif")
 animation = &"casedamage"
 autoplay = "idle"

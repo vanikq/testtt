@@ -32,3 +32,15 @@ msgstr "выйти"
 #: ui/settingsmenu.gd
 msgid "LANG"
 msgstr "язык"
+
+#: ui/settingsmenu.gd
+msgid "MODE"
+msgstr "какой режим?"
+
+#: ui/settingsmenu.gd
+msgid "STORY"
+msgstr "сюжетный режим"
+
+#: ui/settingsmenu.gd
+msgid "INFINITY"
+msgstr "бесконечный режим"

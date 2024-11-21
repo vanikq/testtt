@@ -23,7 +23,10 @@ func _physics_process(_delta):
 	if Global.hp <= 0:
 		Global.hp = 0
 		get_tree().change_scene_to_file("res://ui/menu.tscn")
+		queue_free()
 		
+	if Global.hp >= 101:
+		Global.hp = 100
 	
 	if Input.is_action_just_pressed("shoot"):
 		shoot()

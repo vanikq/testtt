@@ -2,6 +2,7 @@ extends Node
 
 @onready var buttons = $"../buttons"
 @onready var settings = $"../settingsmenu/settings"
+@onready var chosemenu = $"../settingsmenu/chosemenu"
 
 var musicfon: bool = true
 var musicui: bool = true
@@ -41,3 +42,23 @@ func _on_ui_pressed():
 	buttons.play()
 	await buttons.finished
 	musicui = !musicui
+
+func _on_play_pressed():
+	buttons.play()
+	await buttons.finished
+	chosemenu.show()
+
+func _on_button_pressed():
+	buttons.play()
+	await buttons.finished
+	chosemenu.hide()
+
+func _on_infinitymod_pressed():
+	buttons.play()
+	await buttons.finished
+	Loader.load_scene("res://levels/leveltest.tscn")
+
+
+func _on_storymod_pressed():
+	buttons.play()
+	await buttons.finished

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://vt4hsimm44m1" path="res://graf/playeranim/pulea.png" id="2_hv7tn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_54w1k"]
-radius = 5.0
+radius = 4.0
 
 [node name="bullet" type="Area2D" groups=["bullet"]]
 collision_layer = 8
@@ -15,7 +15,7 @@ script = ExtResource("1_dlqm4")
 shape = SubResource("CircleShape2D_54w1k")
 
 [node name="Pulea" type="Sprite2D" parent="."]
-scale = Vector2(0.625, 0.625)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_hv7tn")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

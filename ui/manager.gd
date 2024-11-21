@@ -1,5 +1,6 @@
 extends Node
 
+@onready var bottonsm = $"../bottonsm"
 @onready var pause_menu = $"../CanvasLayer/pause menu"
 var game_paused: bool = false
 
@@ -14,17 +15,21 @@ func _process(_delta):
 		get_tree().paused = false
 		pause_menu.hide()
 
-
-
 func _on_resume_pressed():
+	bottonsm.play()
+	await bottonsm.finished
 	game_paused = !game_paused
 
 func _on_quit_pressed():
+	bottonsm.play()
+	await bottonsm.finished
 	get_tree().quit()
 
 func _on_settings_pressed():
-	get_tree().paused = false
-	get_tree().change_scene_to_file("res://ui/menu.tscn")
+	bottonsm.play()
+	await bottonsm.finished
+	game_paused = false
+	Loader.load_scene("res://ui/menu.tscn")
 
 func _on_pause_pressed():
 	game_paused = !game_paused

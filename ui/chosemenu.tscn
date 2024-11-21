@@ -1,0 +1,69 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvn5f1xwo7jdd"]
+
+[ext_resource type="Texture2D" uid="uid://bq3wum8gj1a6o" path="res://graf/icon.svg" id="1_83jli"]
+[ext_resource type="FontFile" uid="uid://c4468iwnav2bn" path="res://graf/ui/fonts/PressStart2P-Regular.ttf" id="3_kivx2"]
+[ext_resource type="Texture2D" uid="uid://csbjn0yl8ii76" path="res://graf/ui/back.png" id="3_t5jfx"]
+
+[node name="chosemenu" type="CanvasLayer"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_83jli")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 35
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 35
+theme_override_constants/margin_bottom = 20
+
+[node name="Button" type="Button" parent="MarginContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+icon = ExtResource("3_t5jfx")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("3_kivx2")
+theme_override_font_sizes/font_size = 70
+text = "What mode?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="storymod" type="Button" parent="MarginContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("3_kivx2")
+theme_override_font_sizes/font_size = 30
+text = "story
+mode
+"
+
+[node name="infinitymod" type="Button" parent="MarginContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("3_kivx2")
+theme_override_font_sizes/font_size = 30
+text = "infinity
+mode
+"

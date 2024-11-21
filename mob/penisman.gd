@@ -18,7 +18,7 @@ var state : int:
 				attack_state()
 
 var hpmob:int = 40
-var speedmob: int = 200
+var speedmob: int = 150
 var chase: bool = false
 @export var bullet: PackedScene
 @onready var anim = $AnimatedSprite2D

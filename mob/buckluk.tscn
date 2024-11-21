@@ -8,10 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://1jyp067vj7x3" path="res://graf/mobsanim/booklukfara.png" id="6_821qg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o5xy5"]
-size = Vector2(24, 36)
+size = Vector2(12, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fdcrw"]
-size = Vector2(28, 40)
+size = Vector2(14, 22)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jla2u"]
 atlas = ExtResource("2_qbr5n")
@@ -192,7 +192,7 @@ collision_mask = 10
 shape = SubResource("RectangleShape2D_fdcrw")
 
 [node name="anim" type="AnimatedSprite2D" parent="."]
-scale = Vector2(1.0625, 1.125)
+scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_kolyv")
 animation = &"damagedid"
 autoplay = "chase"

@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://c8yavn23g2v5r" path="res://graf/playeranim/puscaPLAYER.png" id="4_ia31b"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6xp1p"]
-radius = 17.0
-height = 58.0
+radius = 8.0
+height = 32.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bedny"]
 animations = [{
@@ -32,12 +32,10 @@ bullet = ExtResource("2_haxxe")
 shape = SubResource("CapsuleShape2D_6xp1p")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(2, 1.8125)
 sprite_frames = SubResource("SpriteFrames_bedny")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(2, 2)
-zoom = Vector2(2, 2)
 limit_left = 0
 limit_top = 0
 limit_right = 1152
@@ -45,15 +43,14 @@ limit_bottom = 648
 limit_smoothed = true
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-target_position = Vector2(44, 0)
+target_position = Vector2(22, 0)
 collision_mask = 5
 
 [node name="Pusk" type="Sprite2D" parent="RayCast2D"]
-scale = Vector2(2, 2)
 texture = ExtResource("4_ia31b")
 
 [node name="Marker2D" type="Marker2D" parent="RayCast2D"]
-position = Vector2(25, 0)
+position = Vector2(12, 0)
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 2

@@ -32,3 +32,15 @@ msgstr "quit"
 #: ui/settingsmenu.gd
 msgid "LANG"
 msgstr "language"
+
+#: ui/settingsmenu.gd
+msgid "MODE"
+msgstr "what mode?"
+
+#: ui/settingsmenu.gd
+msgid "STORY"
+msgstr "story mode"
+
+#: ui/settingsmenu.gd
+msgid "INFINITY"
+msgstr "infinity mode"

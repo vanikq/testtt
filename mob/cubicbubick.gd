@@ -21,7 +21,7 @@ var state : int:
 				attack_state()
 
 var hpmob: int = 40
-var speedmob: int = 400
+var speedmob: int = 230
 var chase: bool = false
 @onready var anim = $AnimatedSprite2D
 @onready var attackzone = $attack/attackzone

@@ -21,6 +21,7 @@ config/icon="res://graf/icon.svg"
 
 Global="*res://globals/global.gd"
 Functions="*res://globals/functions.gd"
+Loader="*res://globals/loader.gd"
 
 [display]
 
@@ -81,10 +82,10 @@ locale/translations_pot_files=PackedStringArray("res://ui/settingsmenu.gd")
 2d_physics/layer_3="mobiku"
 2d_physics/layer_4="gun"
 2d_physics/layer_5="gunmob"
+2d_physics/layer_6="inf"
 
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="mobile"
 textures/vram_compression/import_etc2_astc=true
-environment/defaults/default_clear_color=Color(0.162066, 0.162066, 0.162066, 1)

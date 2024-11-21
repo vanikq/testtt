@@ -4,11 +4,19 @@
 [ext_resource type="Texture2D" uid="uid://csbjn0yl8ii76" path="res://graf/ui/back.png" id="3_4jx6g"]
 [ext_resource type="Texture2D" uid="uid://cjytkb51g1cb7" path="res://graf/ui/musicui.png" id="3_x0hku"]
 [ext_resource type="Texture2D" uid="uid://djg0snf6bfbc3" path="res://graf/ui/music.png" id="4_k5r5h"]
-[ext_resource type="FontFile" uid="uid://ce7lo66jluat" path="res://graf/ui/fonts/m6x11plus.ttf" id="5_dwwbk"]
+[ext_resource type="FontFile" uid="uid://c4468iwnav2bn" path="res://graf/ui/fonts/PressStart2P-Regular.ttf" id="5_qr1m7"]
 
 [node name="settings" type="CanvasLayer"]
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -16,7 +24,8 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_t8qy6")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -27,7 +36,7 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 35
 theme_override_constants/margin_bottom = 20
 
-[node name="back" type="Button" parent="MarginContainer"]
+[node name="back" type="Button" parent="Panel/MarginContainer"]
 clip_contents = true
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
@@ -38,16 +47,69 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="musi" type="Button" parent="."]
+[node name="lang" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -160.0
+offset_top = -198.305
+offset_right = 160.0
+offset_bottom = -147.305
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("5_qr1m7")
+theme_override_font_sizes/font_size = 40
+text = "language
+"
+
+[node name="english" type="Button" parent="Panel/lang"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -341.64
+offset_top = 7.0
+offset_right = -24.64
+offset_bottom = 71.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("5_qr1m7")
+theme_override_font_sizes/font_size = 35
+text = "english"
+
+[node name="russian" type="Button" parent="Panel/lang"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 28.175
+offset_top = 7.0
+offset_right = 345.175
+offset_bottom = 76.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("5_qr1m7")
+theme_override_font_sizes/font_size = 35
+text = "russian"
+
+[node name="musi" type="Button" parent="Panel"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 5.0
-offset_top = -88.0
-offset_right = 141.0
-offset_bottom = 48.0
+offset_left = 11.465
+offset_top = -121.165
+offset_right = 147.465
+offset_bottom = 14.835
 grow_horizontal = 2
 grow_vertical = 2
 icon = ExtResource("3_x0hku")
@@ -55,16 +117,17 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="ui" type="Button" parent="."]
+[node name="ui" type="Button" parent="Panel"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -141.0
-offset_top = -88.0
-offset_right = -5.0
-offset_bottom = 48.0
+offset_left = -137.145
+offset_top = -121.165
+offset_right = -1.14502
+offset_bottom = 14.835
 grow_horizontal = 2
 grow_vertical = 2
 icon = ExtResource("4_k5r5h")
@@ -72,55 +135,19 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="HSlider" type="HSlider" parent="."]
+[node name="HSlider" type="HSlider" parent="Panel"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -139.0
-offset_top = 76.0
+offset_top = 24.17
 offset_right = 139.0
-offset_bottom = 154.0
+offset_bottom = 102.17
 grow_horizontal = 2
 grow_vertical = 2
 max_value = 1.0
 step = 0.01
 value = 0.5
-
-[node name="lang" type="Label" parent="."]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -78.0
-offset_top = -168.0
-offset_right = 78.0
-offset_bottom = -117.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_fonts/font = ExtResource("5_dwwbk")
-theme_override_font_sizes/font_size = 50
-text = "language
-"
-
-[node name="english" type="Button" parent="lang"]
-layout_mode = 0
-offset_left = -117.0
-offset_top = 59.0
-offset_right = 54.0
-offset_bottom = 132.0
-theme_override_fonts/font = ExtResource("5_dwwbk")
-theme_override_font_sizes/font_size = 50
-text = "english"
-
-[node name="russian" type="Button" parent="lang"]
-layout_mode = 0
-offset_left = 90.0
-offset_top = 59.0
-offset_right = 261.0
-offset_bottom = 132.0
-theme_override_fonts/font = ExtResource("5_dwwbk")
-theme_override_font_sizes/font_size = 50
-text = "russian"
